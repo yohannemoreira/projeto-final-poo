@@ -1,21 +1,22 @@
 package account;
 
 import post.Post;
+import post.PostRepository;
 
 public class Account {
+	private String name;
 	private String user;
-	private String login;
 	private String password;
 	private String email;
 	private String course;
 	private String semester;
-	private Post posts;
+	private PostRepository posts;
 	private int followers=0;
-	public Account(String user, String login, String password, String email, String course, String semester, Post posts,
+	public Account(String name, String user, String password, String email, String course, String semester, PostRepository posts,
 			int followers) {
 		super();
+		this.name = name;
 		this.user = user;
-		this.login = login;
 		this.password = password;
 		this.email = email;
 		this.course = course;
@@ -24,16 +25,16 @@ public class Account {
 		this.followers = followers;
 	}
 	public String getUser() {
-		return user;
+		return name;
 	}
 	public void setUser(String user) {
-		this.user = user;
+		this.name = user;
 	}
 	public String getLogin() {
-		return login;
+		return user;
 	}
 	public void setLogin(String login) {
-		this.login = login;
+		this.user = login;
 	}
 	public String getPassword() {
 		return password;
@@ -59,10 +60,10 @@ public class Account {
 	public void setSemester(String semester) {
 		this.semester = semester;
 	}
-	public Post getPosts() {
+	public PostRepository getPosts() {
 		return posts;
 	}
-	public void setPosts(Post posts) {
+	public void setPosts(PostRepository posts) {
 		this.posts = posts;
 	}
 	public int getFollowers() {
