@@ -25,13 +25,13 @@ public class Account {
 		this.followers = followers;
 	}
 	public String getUser() {
-		return name;
+		return user;
 	}
 	public void setUser(String user) {
-		this.name = user;
+		this.user = user;
 	}
-	public String getLogin() {
-		return user;
+	public String getName() {
+		return name;
 	}
 	public void setLogin(String login) {
 		this.user = login;
