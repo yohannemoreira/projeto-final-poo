@@ -1,21 +1,23 @@
 package community;
 
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Community {
 	private String title;
 	private String theme;
 	private String description;
-	private int id;
-	private ArrayList<Account> listAccounts;
+	private Integer id;
+	private Map<String, Account> profiles;
+
 	
-	public Community(String title, String theme, String description, int id) {
+	public Community(String title, String theme, String description, Integer id) {
 		super();
 		this.title = title;
 		this.theme = theme;
 		this.description = description;
 		this.id = id;
-		this.listAccounts = new ArrayList<Account>();
+		this.profiles = new HashMap<String, Account>();
 	}
 
 	public String getTitle() {
@@ -42,21 +44,30 @@ public class Community {
 		this.description = description;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	public ArrayList<Account> getListAccounts() {
-		return listAccounts;
+	public Map<String, Account> getProfiles() {
+		return profiles;
 	}
 
-	public void setListAccounts(ArrayList<Account> listAccounts) {
-		this.listAccounts = listAccounts;
+	public void setProfiles(Map<String, Account> profiles) {
+		this.profiles = profiles;
 	}
 
+	@Override
+	public String toString() {
+		return "Community [title=" + title + ", theme=" + theme + ", description=" + description + ", id=" + id
+				+ ", profiles=" + profiles + "]\n";
+	}
+	
+	
+	
 }
+
 
