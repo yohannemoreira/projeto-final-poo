@@ -5,7 +5,7 @@ public class Comment{
     private int id;
     private String date;
 
-            public comment(int id, String author, String text, String date){
+            public Comment(int id, String author, String text, String date){
             super();
             this.id = id;
             this.author = author;

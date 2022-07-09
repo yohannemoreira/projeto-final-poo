@@ -1,5 +1,4 @@
-
-Package Post
+package post;
 
 public interface IRepositorio {
 	

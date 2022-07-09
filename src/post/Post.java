@@ -1,7 +1,7 @@
 package post;
 
+import java.util.List;
 import org.w3c.dom.Comment;
-import projetofinalpoo.*;
 
 public class Post {
 	String legenda;
@@ -62,7 +62,6 @@ public class Post {
 		this.numeroComentario = numeroComentario;
 	}
 
-	S
 	
 	//Comments
 	public List<Comment> getComments(){
@@ -71,7 +70,7 @@ public class Post {
 
 	//Add Comment
 	public void addComment(int id, String author, String text, String date){
-			comments.add(new Comment(id, author, text, date));
+			comments.add(new Comment(id, author, text, date) {});
 	}
 
 	//Remove Comment
