@@ -2,8 +2,8 @@ package account;
 
 import java.util.Collection;
 
-import exceptions.NotFoundException;
-import exceptions.RegisteredAccountException;
+import account.exceptions.NotFoundException;
+import account.exceptions.RegisteredAccountException;
 
 interface AccountRegistration {
 

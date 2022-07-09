@@ -1,42 +1,71 @@
 package account;
 
+import Events.ExamEvents;
 import java.util.Collection;
 
-import exceptions.NotFoundException;
-import exceptions.RegisteredAccountException;
+import account.exceptions.NotFoundException;
+import account.exceptions.RegisteredAccountException;
 
 public class AccountController {
-	
-	private AccountRegistration accountRegistration;
-	
-	
-	
-	public AccountController(AccountRegistration accountRegistration) {
-		super();
-		this.accountRegistration = accountRegistration;
-	}
 
-	public void addAccount(Account account) throws RegisteredAccountException{
-		accountRegistration.addAccount(account);
-	}
+    private AccountCollection accounts;
 
-	public void removeAccount(Account account) throws NotFoundException{
-		accountRegistration.removeAccount(account);
-	}
+    public AccountController() {
+	super();
+	this.accounts = new AccountCollection();
+    }
 
-	public void editAccount(Account account){
-		
-	}
-	
-	public Account findAccount (String user) throws NotFoundException{	
-		return accountRegistration.findAccount(user);
-	}
+    public AccountCollection getAccounts() {
+	return accounts;
+    }
 
-	public Collection<Account> list(){
-		return accountRegistration.list();
-		
-	};
-	
-	
+    public void setAccounts(AccountCollection accounts) {
+	this.accounts = accounts;
+    }
+
+    public void addAccount(Account account) throws RegisteredAccountException {
+	accounts.addAccount(account);
+    }
+
+    public void removeAccount(Account account) throws NotFoundException {
+	accounts.removeAccount(account);
+    }
+
+    public void editAccount(Account account) {
+
+    }
+
+    public Account findAccount(String email) throws NotFoundException {
+	return accounts.findAccount(email);
+    }
+
+    public Collection<Account> list() {
+	return accounts.list();
+
+    }
+
+    public void addExam(Account account, String nameExam, String date, String localization, String description) throws NotFoundException {
+	accounts.findAccount(account.getEmail()).addExam(nameExam, date, localization, description);
+    }
+
+    public void editNameExam(Account account, String nameExam) throws NotFoundException {
+	accounts.findAccount(account.getEmail()).editNameExam(nameExam);
+    }
+
+    public void editDateExam(Account account, String nameExam, String DateExam) throws NotFoundException {
+	accounts.findAccount(account.getEmail()).editDateExam(nameExam, DateExam);
+    }
+
+    public void editLocalizationExam(Account account, String nameExam, String LocalizationExam) throws NotFoundException {
+	accounts.findAccount(account.getEmail()).editLocalization(nameExam, LocalizationExam);
+    }
+
+    public void editdescription(Account account, String nameExam, String description) throws NotFoundException {
+	accounts.findAccount(account.getEmail()).editDescription(nameExam, description);
+    }
+
+    public void showExams(Account account) throws NotFoundException {
+    accounts.findAccount(account.getEmail()).showExams();
+    }
 
 }
