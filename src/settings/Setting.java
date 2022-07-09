@@ -6,17 +6,16 @@ public class Setting {
 	public String activityStatus;
 	public String helpCenter;
 	public String accountManagement;
-	public String language;
+	
 
 	public Setting(String personalInformation, String accountStatus, String activityStatus, String helpCenter,
-			String accountManagement, String language) {
+			String accountManagement) {
 		super();
 		this.personalInformation = personalInformation;
 		this.accountStatus = accountStatus;
 		this.activityStatus = activityStatus;
 		this.helpCenter = helpCenter;
 		this.accountManagement = accountManagement;
-		this.language = language;
 	}
 
 	public String getPersonalInformation() {
@@ -57,14 +56,6 @@ public class Setting {
 
 	public void setAccountManagement(String accountManagement) {
 		this.accountManagement = accountManagement;
-	}
-
-	public String getLanguage() {
-		return language;
-	}
-
-	public void setLanguage(String language) {
-		this.language = language;
 	}
 	
 	
