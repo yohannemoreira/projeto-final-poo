@@ -8,7 +8,7 @@ import community.ICommunityRepository;
 import exceptions.InexistentCommunityException;
 import exceptions.NotFoundCommunityException;
 import exceptions.RegisteredCommunityException;
-import negocios.CommunityController;
+import controllers.CommunityController;
 
 public class CommunityFacade {
 	private CommunityController communityController;
