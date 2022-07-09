@@ -2,9 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMain.java to edit this template
  */
-package fx_gui.fx_login;
+package fx_gui.fx_registration;
 
-import java.io.IOException;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -19,12 +18,12 @@ import javafx.stage.Stage;
  *
  * @author Yohanne
  */
-public class LoginFXMain extends Application {
-
+public class RegistrationFXMain extends Application {
     
+ 
     @Override
     public void start(Stage primaryStage) throws Exception {
-	 Parent root = FXMLLoader.load(getClass().getResource("LoginFXML.fxml"));
+	 Parent root = FXMLLoader.load(getClass().getResource("RegistrationFXML.fxml"));
         
         Scene scene = new Scene(root);
 	scene.getStylesheets().add("style_gui.css");
