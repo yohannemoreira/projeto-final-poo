@@ -3,16 +3,18 @@ package facade;
 import java.util.Collection;
 
 import community.Community;
-import community.CommunityRepository;
-import community.ICommunityRepository;
+import controller.CommunityController;
 import exceptions.InexistentCommunityException;
 import exceptions.NotFoundCommunityException;
 import exceptions.RegisteredCommunityException;
-import controllers.CommunityController;
+import repository.CommunityRepository;
+import repository.ICommunityRepository;
 
 public class CommunityFacade {
+	//Attributes
 	private CommunityController communityController;
 	
+	//Pattern singleton
 	static private CommunityFacade instance = null;
 	
 	public static CommunityFacade getInstance() {
@@ -22,11 +24,14 @@ public class CommunityFacade {
 		return instance;
 	}
 	
+	//Private constructor
 	private CommunityFacade() {
 		ICommunityRepository repCommunity = new CommunityRepository();
 		this.communityController = new CommunityController(repCommunity);
 	}
 	
+	
+	//Methods
 	public void addCommunity(Community community) throws RegisteredCommunityException {
 		communityController.addCommunity(community);
 	}
@@ -44,12 +49,11 @@ public class CommunityFacade {
 		
 	}
 	
-	
 	public Collection<Community> list() throws InexistentCommunityException {
 		Collection<Community> listCommunity = communityController.list();
-		System.out.println(listCommunity);
 		return listCommunity;
 	}
 	
 	
 }
+
