@@ -1,15 +1,17 @@
-package community;
+package repository;
 
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+import community.Community;
+
 
 public class CommunityRepository implements ICommunityRepository{
-	//Atributes
-  private Map<Integer, Community> communityList;
+	//Attributes
+	private Map<Integer, Community> communityList;
 	
-  //Constructor
+	//Constructor
 	public CommunityRepository() {
 		this.communityList = new HashMap<Integer, Community>();
 	}
@@ -51,6 +53,5 @@ public class CommunityRepository implements ICommunityRepository{
 	public Collection<Community> list(){
 		return this.communityList.values();
 	}
-	
 	
 }
