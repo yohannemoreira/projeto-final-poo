@@ -31,9 +31,6 @@ public class AccountController {
 	accounts.removeAccount(account);
     }
 
-    public void editAccount(Account account) {
-
-    }
 
     public Account findAccount(String email) throws NotFoundException {
 	return accounts.findAccount(email);

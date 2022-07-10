@@ -46,6 +46,6 @@
             <Font name="Lucida Sans Demibold" size="12.0" />
          </font>
       </Label>
-      <Button layoutX="393.0" layoutY="468.0" mnemonicParsing="false" onAction="#addAccountAction" text="Fazer Cadastro" />
+      <Button fx:id="buttonSceneReg" layoutX="393.0" layoutY="468.0" mnemonicParsing="false" onAction="#sceneRegAction" text="Fazer Cadastro" />
    </children>
 </AnchorPane>

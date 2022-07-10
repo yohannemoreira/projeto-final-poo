@@ -20,7 +20,8 @@ public class Teste {
 	System.out.println(FacadeAccount.getInstance().getAccounts().getProfiles().get(conta1.getEmail()).getName());
 
 	conta1.addExam("Trabalho de POO", "12/07/2022", "Bloco Anexo", "Trabalho de Final de Disciplina");
-	conta1.addExam("Trabalho de ED", "12/07/2022", "Bloco Anexo", "Trabalho de Final de Disciplina");
+	FacadeAccount.getInstance().getAccounts().getProfiles().get(conta1.getEmail()).showExams();
+	FacadeAccount.getInstance().getAccounts().getProfiles().get(conta1.getEmail()).editNameExam("AF DE POO");
 	FacadeAccount.getInstance().getAccounts().getProfiles().get(conta1.getEmail()).showExams();
     }
 
