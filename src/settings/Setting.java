@@ -8,7 +8,7 @@ public class Settings {
 	//To see personal informations from the account
 	private String seePersonalInformation(){
 		System.out.println("Name: " + account.getName() + "/n" + "User: " + account.getUser() + "/n" + "E-mail: " + account.getEmail() + 
-				"/n" + "Course: " + account.getCourse() + "/n"  +"Semester: " + account.getSemester() );
+				"/n" + "Course: " + account.getCourse() + "/n"  +"Semester: " + account.getSemester());
 	}
 	
 	//To see account status
@@ -16,26 +16,27 @@ public class Settings {
 		System.out.println("Number of Followers " + followers.size() + "/n");
 		System.out.println("Number of Posts " + posts.size() + "/n");
 		System.out.println("Number of Exams " + exams.size() + "/n");
-	}	
-
-	private void changePassword (String newPassword) {
-		account.findAccount(account.setPassword(password)).changePassword(password);
 	}
 
+	private void changePassword(String newPassword) {
+		this.account.setPassword(newPassword);
+	}
+	private void changeUser(String newUser) throws UserAlreadyUsedException{
+		for (int i = 0; i < account.size(); i++){
+			if (account.get(i).getUser == newUser){
+				throw new UserAlreadyUsedException();
+			}
+		}
+		else() {
+			this.account.setUser(newUser);
+		}
+	}
 	private void changeName(String newName) {
-		account.findAccount(account.setName(name)).changeName(name);
+		this.account.setName(newName);
 	}
 
 	private void changeEmail(String newEmail) {
-		account.findAccount(account.setEmail(email)).changeEmail(email);
-	}
-
-	private void logOut() {
-	
-	}
-
-	private void deleteAccount() {
-	
+		this.account.setEmail(newEmail);
 	}
 	
 }
