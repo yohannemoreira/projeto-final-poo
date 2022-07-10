@@ -4,95 +4,83 @@ import java.util.List;
 import org.w3c.dom.Comment;
 
 public class Post {
-	String legenda;
-	String id;
-	int numeroCurtida;
-	int numeroComentario;
-	String localizacao;
-
+	private String subtitle;
+	private int id;
+	private int likeNumber;
+	private int commentNumber;
+	private String localization;
 	private List<Comment> comments;
-
-	public Post(String legenda) {
-		this.legenda = legenda;
+	
+	public Post(String subtitle) {
+		this.subtitle = subtitle;
+		this.id = this.hashCode();
 	}
-
+	
 	//metodos de acesso controlado
 	//legenda
-	public String getLegenda() {
-		return this.legenda;
+	public String getSubtitle() {
+		return this.subtitle;
 	}
-
-	public void setLegenda(String legenda) {
-		this.legenda = legenda;
+	public void setSubtitle(String subtitle) {
+		this.subtitle = subtitle;
 	}
-
 	//id
-	public String getId() {
+	public int getId() {
 		return this.id;
 	}
-
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
-
 	//localizacao
-	public String getLocalizacao() {
-		return this.localizacao;
+	public String getlocalization() {
+		return this.localization;
 	}
-
-	public void setLocalizacao(String localizacao) {
-		this.localizacao = localizacao;
+	public void setLocalization(String localization) {
+		this.localization = localization;
 	}
-
 	//curtidas
-	public int getNumeroCurtida() {
-		return this.numeroCurtida;
+	public int getLikeNumber() {
+		return this.likeNumber;
 	}
-
-	public void getNumeroCurtida(int numeroCurtida) {
-		this.numeroCurtida = numeroCurtida;
+	public void getLikeNumber(int likeNumber) {
+		this.likeNumber = likeNumber;
 	}
-
 	//comentario
-	public int getNumeroComentario() {
-		return this.numeroComentario;
+	public int getCommentNumber() {
+		return this.commentNumber;
 	}
-
-	public void getNumeroComentario(int numeroComentario) {
-		this.numeroComentario = numeroComentario;
+	public void setCommentNumber(int commentNumber) {
+		this.commentNumber = commentNumber;
 	}
-
 	
 	//Comments
-	public List<Comment> getComments(){
-		return comments;
-	}
-
-	//Add Comment
-	public void addComment(int id, String author, String text, String date){
-			comments.add(new Comment(id, author, text, date) {});
-	}
-
-	//Remove Comment
-	public void removeComment(int id){
-		for (int i = 0; i < comments.size(); i++) {
-			if (comments.get(i).getId() == id){
-				comments.remove(i);
-			}
+		public List<Comment> getComments(){
+			return comments;
 		}
-		System.out.println("---------------------------------------------------------------------------");
-		System.out.println("{COMMENT DELETED}");
-		System.out.println("/n");
-	}
 
-	//Show Comments
-	public void showComments(){
-		for (int i = 0; i < comments.size(); i++) {
-			System.out.println(" Comment " + comments.get(i).getId() + " by " + comments.get(i).getAuthor() + " on " + comments.get(i).getDate());
-			System.out.println("/n" + comments.get(i).getText());
+		//Add Comment
+		public void addComment(int id, String author, String text, String date){
+				comments.add(new Comment(id, author, text, date) {});
+		}
+
+		//Remove Comment
+		public void removeComment(int id){
+			for (int i = 0; i < comments.size(); i++) {
+				if (comments.get(i).getId() == id){
+					comments.remove(i);
+				}
+			}
+			System.out.println("---------------------------------------------------------------------------");
+			System.out.println("{COMMENT DELETED}");
 			System.out.println("/n");
 		}
-	}
 
-
+		//Show Comments
+		public void showComments(){
+			for (int i = 0; i < comments.size(); i++) {
+				System.out.println(" Comment " + comments.get(i).getId() + " by " + comments.get(i).getAuthor() + " on " + comments.get(i).getDate());
+				System.out.println("/n" + comments.get(i).getText());
+				System.out.println("/n");
+			}
+		}
 }
