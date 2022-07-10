@@ -1,94 +1,44 @@
-package settings;
+package Settings;
 
-public class Setting {
-	public String personalInformation;
-	public String accountStatus;
-	public String activityStatus;
-	public String helpCenter;
-	public String accountManagement;
-	
+import package account;
+public class Settings {
 
-	public Setting(String personalInformation, String accountStatus, String activityStatus, String helpCenter,
-			String accountManagement) {
-		super();
-		this.personalInformation = personalInformation;
-		this.accountStatus = accountStatus;
-		this.activityStatus = activityStatus;
-		this.helpCenter = helpCenter;
-		this.accountManagement = accountManagement;
-	}
+	public Account account;
 
-	public String getPersonalInformation() {
-		return personalInformation;
-	}
-
-	public void setPersonalInformation(String personalInformation) {
-		this.personalInformation = personalInformation;
-	}
-
-	public String getAccountStatus() {
-		return accountStatus;
-	}
-
-	public void setAccountStatus(String accountStatus) {
-		this.accountStatus = accountStatus;
-	}
-
-	public String getActivityStatus() {
-		return activityStatus;
-	}
-
-	public void setActivityStatus(String activityStatus) {
-		this.activityStatus = activityStatus;
-	}
-
-	public String getHelpCenter() {
-		return helpCenter;
-	}
-
-	public void setHelpCenter(String helpCenter) {
-		this.helpCenter = helpCenter;
-	}
-
-	public String getAccountManagement() {
-		return accountManagement;
-	}
-
-	public void setAccountManagement(String accountManagement) {
-		this.accountManagement = accountManagement;
+	//To see personal informations from the account
+	private String seePersonalInformation(){
+		System.out.println("Name: " + account.getName() + "/n" + "User: " + account.getUser() + "/n" + "E-mail: " + account.getEmail() + 
+				"/n" + "Course: " + account.getCourse() + "/n"  +"Semester: " + account.getSemester());
 	}
 	
-	
-private String seePersonalInformation(String personalInformation) {
+	//To see account status
+	private String seeAccountStatus(String accountStatus) {
+		System.out.println("Number of Followers " + followers.size() + "/n");
+		System.out.println("Number of Posts " + posts.size() + "/n");
+		System.out.println("Number of Exams " + exams.size() + "/n");
+	}
+
+	private void changePassword(String newPassword) {
+		this.account.setPassword(newPassword);
+	}
+	private void changeUser(String newUser) throws UserAlreadyUsedException{
+		for (int i = 0; i < account.size(); i++){
+			if (account.get(i).getUser == newUser){
+				throw new UserAlreadyUsedException();
+			}
+		}
+		else() {
+			this.account.setUser(newUser);
+		}
+	}
+	private void changeName(String newName) {
+		this.account.setName(newName);
+	}
+
+	private void changeEmail(String newEmail) {
+		this.account.setEmail(newEmail);
+	}
 	
 }
 
-private String seeAccountStatus(String accountStatus) {
-	
-}	
 
-private String seeActivityStatus(String activityStatus) {
-	
-}
-
-private void changePassword (String newPassword) {
-	
-}
-
-private void changeName(String newName) {
-	
-}
-
-private void changeEmail(String newEmail) {
-	
-}
-
-private void logOut() {
-	
-}
-
-private void deleteAccount() {
-	
-}
-
-}
