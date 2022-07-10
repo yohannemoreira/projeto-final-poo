@@ -19,13 +19,13 @@ public class Account {
     private String password;
     private String email;
     private String course;
-    private int semester;
+    private String semester;
     private List<Follower> followers;
     private List<Post> posts;
     private Map<String, ExamEvents> exams;
 //  Construtor Padrão
 
-    public Account(String name, String user, String password, String email, String course, int semester) {
+    public Account(String name, String user, String password, String email, String course, String semester) {
 	super();
 	this.name = name;
 	this.user = user;
@@ -79,11 +79,11 @@ public class Account {
 	this.course = course;
     }
 
-    public int getSemester() {
+    public String getSemester() {
 	return semester;
     }
 
-    public void setSemester(int semester) {
+    public void setSemester(String semester) {
 	this.semester = semester;
     }
 

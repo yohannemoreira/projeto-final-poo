@@ -26,7 +26,7 @@ public class RegistrationFXMain extends Application {
 	 Parent root = FXMLLoader.load(getClass().getResource("RegistrationFXML.fxml"));
         
         Scene scene = new Scene(root);
-	scene.getStylesheets().add("style_gui.css");
+	scene.getStylesheets().add("Registration_gui.css");
 	primaryStage.setScene(scene);
 	primaryStage.show();
     }
