@@ -57,24 +57,4 @@ public class AccountCollection implements AccountRegistration {
 	return this.profiles.values();
     }
 
-//    public void addExam(Account account, String nameEv, String date, String localization, String description) throws NotFoundException {
-//	findAccount(account.getEmail()).addExam(nameEv, date, localization, description);
-//    }
-//
-//    public void editNameExam(Account account, String nameEv) throws NotFoundException {
-//	findAccount(account.getEmail()).editNameExam(nameEv);
-//    }
-//
-//    public void editDateExam(Account account, String nameExam, String DateExam) throws NotFoundException {
-//	findAccount(account.getEmail()).editDateExam(nameExam, DateExam);
-//    }
-//
-//    public void editLocalizationExam(Account account, String nameExam, String LocalizationExam) throws NotFoundException {
-//	findAccount(account.getEmail()).editLocalization(nameExam, LocalizationExam);
-//    }
-//
-//    public void editdescription(Account account, String nameExam, String description) throws NotFoundException {
-//	findAccount(account.getEmail()).editDescription(nameExam, description);
-//    }
-
 }

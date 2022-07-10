@@ -2,8 +2,6 @@
  * @author Yohanne Moreira
  * version 1.0
  * since 05-06-2022
- * 
- * 
  */
 package account;
 
@@ -104,36 +102,5 @@ public class Account {
     public void setPosts(List<Post> posts) {
 	this.posts = posts;
     }
-
-// Test Registration 
-    public void addExam( String nameEv, String date, String localization, String description) {
-	exams.put(nameEv, new ExamEvents( nameEv, date, localization, description));
-    }
-
-    public void editNameExam(String nameExam) {
-	ExamEvents examSelect = exams.get(nameExam);
-	examSelect.setNameExam(nameExam);
-    }
-
-    public void editDateExam(String nameExam, String DateExam) {
-	ExamEvents examSelect = exams.get(nameExam);
-	examSelect.setDateExam(DateExam);
-    }
-
-    public void editLocalization(String nameExam, String localization) {
-	ExamEvents examSelect = exams.get(nameExam);
-	examSelect.setLocalization(localization);
-    }
-
-    public void editDescription(String nameExam, String description) {
-	ExamEvents examSelect = exams.get(nameExam);
-	examSelect.setLocalization(description);
-    }
-
-    public void showExams(){
-  for(Map.Entry<String, ExamEvents> name : exams.entrySet()){
-      System.out.println(name.getValue().getNameExam());
-}
-}
 
 }

@@ -61,21 +61,7 @@ public class Post {
 	public void getNumeroComentario(int numeroComentario) {
 		this.numeroComentario = numeroComentario;
 	}
-<<<<<<< Updated upstream
 
-=======
-<<<<<<< HEAD
-	
-=======
-
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 1d8e78d65643cb0561110fa64c3a214133dd0678
-=======
->>>>>>> 1642173a97d6267bb5ad21b4d91c36f74683b638
-=======
->>>>>>> 1642173a97d6267bb5ad21b4d91c36f74683b638
->>>>>>> Stashed changes
 	
 	//Comments
 	public List<Comment> getComments(){

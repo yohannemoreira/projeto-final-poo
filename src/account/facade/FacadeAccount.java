@@ -48,28 +48,4 @@ public class FacadeAccount {
 
     }
 
-    public void addExam(Account account, String nameExam, String date, String localization, String description) throws NotFoundException {
-	cntrlAccount.findAccount(account.getEmail()).addExam(nameExam, date, localization, description);
-    }
-
-    public void editNameExam(Account account, String nameExam) throws NotFoundException {
-	cntrlAccount.findAccount(account.getEmail()).editNameExam(nameExam);
-    }
-
-    public void editDateExam(Account account, String nameExam, String DateExam) throws NotFoundException {
-	cntrlAccount.findAccount(account.getEmail()).editDateExam(nameExam, DateExam);
-    }
-
-    public void editLocalizationExam(Account account, String nameExam, String LocalizationExam) throws NotFoundException {
-	cntrlAccount.findAccount(account.getEmail()).editLocalization(nameExam, LocalizationExam);
-    }
-
-    public void editdescription(Account account, String nameExam, String description) throws NotFoundException {
-	cntrlAccount.findAccount(account.getEmail()).editDescription(nameExam, description);
-    }
-
-    public void showExams(Account account) throws NotFoundException {
-	cntrlAccount.findAccount(account.getEmail()).showExams();
-    }
-
 }
