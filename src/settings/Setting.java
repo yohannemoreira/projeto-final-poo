@@ -6,28 +6,10 @@ public class Settings {
 	public String personalInformation;
 	public String accountStatus;
 	public String accountManagement;
-<<<<<<< Updated upstream
 	publilc Account account;
 
-	public Settings(String personalInformation, String accountStatus, String activityStatus, String accountManagement) {
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-	
-
-	public Setting(String personalInformation, String accountStatus, String activityStatus, String helpCenter,
-			String accountManagement) {
-=======
-	publilc Account account;
 
 	public Settings(String personalInformation, String accountStatus, String activityStatus, String accountManagement) {
->>>>>>> 1642173a97d6267bb5ad21b4d91c36f74683b638
-=======
-	publilc Account account;
-
-	public Settings(String personalInformation, String accountStatus, String activityStatus, String accountManagement) {
->>>>>>> 1642173a97d6267bb5ad21b4d91c36f74683b638
->>>>>>> Stashed changes
 		super();
 		this.personalInformation = personalInformation;
 		this.accountStatus = accountStatus;
