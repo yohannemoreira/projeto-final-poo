@@ -1,20 +1,17 @@
-package settings;
+	package Settings;
 
-public class Setting {
+import package account;
+
+public class Settings {
 	public String personalInformation;
 	public String accountStatus;
-	public String activityStatus;
-	public String helpCenter;
 	public String accountManagement;
-	
+	publilc Account account;
 
-	public Setting(String personalInformation, String accountStatus, String activityStatus, String helpCenter,
-			String accountManagement) {
+	public Settings(String personalInformation, String accountStatus, String activityStatus, String accountManagement) {
 		super();
 		this.personalInformation = personalInformation;
 		this.accountStatus = accountStatus;
-		this.activityStatus = activityStatus;
-		this.helpCenter = helpCenter;
 		this.accountManagement = accountManagement;
 	}
 
@@ -34,22 +31,6 @@ public class Setting {
 		this.accountStatus = accountStatus;
 	}
 
-	public String getActivityStatus() {
-		return activityStatus;
-	}
-
-	public void setActivityStatus(String activityStatus) {
-		this.activityStatus = activityStatus;
-	}
-
-	public String getHelpCenter() {
-		return helpCenter;
-	}
-
-	public void setHelpCenter(String helpCenter) {
-		this.helpCenter = helpCenter;
-	}
-
 	public String getAccountManagement() {
 		return accountManagement;
 	}
@@ -67,20 +48,16 @@ private String seeAccountStatus(String accountStatus) {
 	
 }	
 
-private String seeActivityStatus(String activityStatus) {
-	
-}
-
 private void changePassword (String newPassword) {
-	
+	account.findAccount(account.setPassword(password)).changePassword(password);
 }
 
 private void changeName(String newName) {
-	
-}
+	account.findAccount(account.setName(name)).changeName(name);
+	}
 
 private void changeEmail(String newEmail) {
-	
+	account.findAccount(account.setEmail(email)).changeEmail(email);
 }
 
 private void logOut() {
@@ -90,5 +67,7 @@ private void logOut() {
 private void deleteAccount() {
 	
 }
-
+	
 }
+
+
