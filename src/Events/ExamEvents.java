@@ -15,17 +15,16 @@ import java.time.format.DateTimeFormatter;
 public class ExamEvents {
     private String nameExam;
     private String dateExam;
-    private String localization;
     private String description;
 
-    LocalDateTime now = LocalDateTime.now();
+    private int eventId;
+
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     String date = formatter.format(now);
 
-    public ExamEvents( String nameExam, String dateExam, String localization, String description) {
+    public ExamEvents(String nameExam, String dateExam, String description) {
 	this.nameExam = nameExam;
 	this.dateExam = dateExam;
-	this.localization = localization;
 	this.description = description;
     }
 
@@ -45,28 +44,12 @@ public class ExamEvents {
 	this. dateExam = dateExam;
     }
 
-    public String getLocalization() {
-	return localization;
-    }
-
-    public void setLocalization(String localization) {
-	this.localization = localization;
-    }
-
     public String getDescription() {
 	return description;
     }
 
     public void setDescription(String description) {
 	this.description = description;
-    }
-
-    public LocalDateTime getNow() {
-	return now;
-    }
-
-    public void setNow(LocalDateTime now) {
-	this.now = now;
     }
 
     public DateTimeFormatter getFormatter() {
@@ -85,5 +68,11 @@ public class ExamEvents {
 	this.date = date;
     }
 
+    public String getEventId() {
+        return eventId;
+    }
+    public void setEventId(int eventId) {
+        this.eventId = eventId;
+    }
    
 }
