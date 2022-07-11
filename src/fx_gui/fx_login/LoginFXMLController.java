@@ -34,7 +34,7 @@ public class LoginFXMLController implements Initializable {
 	    } catch (Exception ex) {
 
 	    }
-// descobrir o motivo do caralho do erro e consertar ou achar uma maneira decente de mudar de Scene sem ser essa gambiarra
+// descobrir o motivo do erro e consertar ou achar uma maneira decente de mudar de Scene sem ser essa gambiarra
     }
 
     @Override
