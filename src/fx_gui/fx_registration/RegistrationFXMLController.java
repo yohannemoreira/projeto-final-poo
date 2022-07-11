@@ -8,22 +8,15 @@ import account.Account;
 import account.exceptions.RegisteredAccountException;
 import account.facade.FacadeAccount;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-
+import javafx.scene.control.Alert;
 /**
  * FXML Controller class
  *
@@ -31,7 +24,7 @@ import javafx.scene.control.TextField;
  */
 public class RegistrationFXMLController implements Initializable {
 
-    @FXML
+     @FXML
     private ComboBox<String> comboItens;
     
       @FXML
@@ -49,9 +42,8 @@ public class RegistrationFXMLController implements Initializable {
     @FXML
     private PasswordField txtPassword = new PasswordField();
     
-     @FXML
+    @FXML
     private Button buttonRegistration;
-
     @FXML//se for public, não precisa da anotação
     private void ComboSemester() {
 	comboItens.setPromptText("Selecione um semestre");
@@ -62,29 +54,24 @@ public class RegistrationFXMLController implements Initializable {
 	comboItens.getItems().add("Outro");
     }
     
-    @FXML
-    void addAction(ActionEvent event) {
+     void addAction(ActionEvent event) {
 	 String name = txtName.getText();
 	String email = txtEmail.getText();
 	String user = txtUser.getText();
 	String course = txtCourse.getText();
 	String password = txtPassword.getText();
 	String semester = comboItens.getSelectionModel().getSelectedItem();
-	
-	try {
-	    FacadeAccount.getInstance().addAccount(new Account(name, user, password, email, course, semester));
-	    // exibir um aviso que deu certo e voltar para tela de login (ou pelo menos voltar direto pra tela de login)
-	} catch (RegisteredAccountException ex) {
+	try{
+	FacadeAccount.getInstance().addAccount(new Account(name, user, password, email, course, semester));
+	}catch (RegisteredAccountException ex) {
 	    Alert alert_registration = new Alert(Alert.AlertType.ERROR);
 	    alert_registration.setTitle("Conta Já cadastrada");
 	    alert_registration.setContentText("Esse E-mail já está sendo utilizado!");
 	    alert_registration.showAndWait();
 	    // criar comandos para limpar os textField (chamar métodos setters para colocar " " nos texts fields)
 	}
-    }
-
- 
-
+     }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 	ComboSemester();
@@ -96,7 +83,5 @@ public class RegistrationFXMLController implements Initializable {
 	
 	
 	});
-        
-    }
-
+    
 }

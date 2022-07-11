@@ -1,6 +1,3 @@
+/bin/
 /account/
-/comment/
-/community/
-/exceptions/
-/post/
-/settings/
+/gui_swing/

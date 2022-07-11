@@ -103,38 +103,38 @@ public class Account {
     public void setPosts(List<Post> posts) {
 	this.posts = posts;
     }
-    public List<ExamaEvents> getExams() {
+    public List<ExamEvents> getExams() {
         return exams;
     }
-    public void setExams(List<ExamsEvent> exams) {
+    public void setExams(List<ExamEvents> exams) {
         this.exams = exams;
     }
     
     public void addExamEvents(String nameExam, String dateExam, String description) {
         exams.add(new ExamEvents(nameExam, dateExam, description));
     }
-    public void editExamEventsName(int eventId, String nameExame) {
+    public void editExamEventsName(String eventId, String nameExame) {
         for (int i = 0; i < exams.size(); i++) {
             if (exams.get(i).getEventId() == eventId) {
-                exams.get(i).setNameExam(eventName);
+                exams.get(i).setNameExam(nameExame);
             }
         }
     }
 
-    public void editExamEventsDate(int eventId, String date) {
+    public void editExamEventsDate(String eventId, String date) {
         for (int i = 0; i < exams.size(); i++) {
             if (exams.get(i).getEventId() == eventId) {
-                exams.get(i).setDateExam(eventDate);
+                exams.get(i).setDateExam(date);
             }
         }
     }
-    public void removeExamEvent(int eventId) {
+    public void removeExamEvent(String eventId) {
         for (int i = 0; i < exams.size(); i++) {
             if (exams.get(i).getEventId() == eventId) {
                 exams.remove(i);
             }
         }
-        Alert_FX.info("{EVENT DELETED}");
+        // Alert_FX.info("{EVENT DELETED}");
     }
 
 }

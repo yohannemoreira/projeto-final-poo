@@ -26,7 +26,7 @@ public class ProfileFXMain extends Application {
 	Parent root = FXMLLoader.load(getClass().getResource("ProfileFXML.fxml"));
         
         Scene scene = new Scene(root);
-	scene.getStylesheets().add("style_gui.css");
+	
 	primaryStage.setScene(scene);
 	primaryStage.show();
     }

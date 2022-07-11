@@ -20,15 +20,14 @@ import javafx.stage.Stage;
  * @author Yohanne
  */
 public class LoginFXMain extends Application {
-
     
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) throws IOException {
 	 Parent root = FXMLLoader.load(getClass().getResource("LoginFXML.fxml"));
         
         Scene scene = new Scene(root);
-	scene.getStylesheets().add("style_gui.css");
-	primaryStage.setScene(scene);
+         
+        primaryStage.setScene(scene);
 	primaryStage.show();
     }
 

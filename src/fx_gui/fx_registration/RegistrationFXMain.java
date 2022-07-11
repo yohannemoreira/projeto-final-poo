@@ -4,6 +4,7 @@
  */
 package fx_gui.fx_registration;
 
+import java.io.IOException;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -20,14 +21,13 @@ import javafx.stage.Stage;
  */
 public class RegistrationFXMain extends Application {
     
- 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+   public void start(Stage primaryStage) throws IOException {
 	 Parent root = FXMLLoader.load(getClass().getResource("RegistrationFXML.fxml"));
         
         Scene scene = new Scene(root);
-	scene.getStylesheets().add("Registration_gui.css");
-	primaryStage.setScene(scene);
+         
+        primaryStage.setScene(scene);
 	primaryStage.show();
     }
 
