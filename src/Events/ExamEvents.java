@@ -16,7 +16,6 @@ public class ExamEvents {
     private String nameExam;
     private String dateExam;
     private String description;
-
     private int eventId;
 
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -28,7 +27,7 @@ public class ExamEvents {
 	this.description = description;
     }
 
-    public String getNameExam() {
+    public int getNameExam() {
 	return nameExam;
     }
 
@@ -70,6 +69,7 @@ public class ExamEvents {
 
     public String getEventId() {
         return eventId;
+	    
     }
     public void setEventId(int eventId) {
         this.eventId = eventId;
