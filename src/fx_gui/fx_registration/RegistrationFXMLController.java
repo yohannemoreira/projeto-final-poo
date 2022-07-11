@@ -73,12 +73,13 @@ public class RegistrationFXMLController implements Initializable {
 	
 	try {
 	    FacadeAccount.getInstance().addAccount(new Account(name, user, password, email, course, semester));
+	    // exibir um aviso que deu certo e voltar para tela de login (ou pelo menos voltar direto pra tela de login)
 	} catch (RegisteredAccountException ex) {
 	    Alert alert_registration = new Alert(Alert.AlertType.ERROR);
 	    alert_registration.setTitle("Conta Já cadastrada");
 	    alert_registration.setContentText("Esse E-mail já está sendo utilizado!");
 	    alert_registration.showAndWait();
-	    // criar comandos para limpar os textField (setar neles " ")
+	    // criar comandos para limpar os textField (chamar métodos setters para colocar " " nos texts fields)
 	}
     }
 
