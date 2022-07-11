@@ -1,7 +1,6 @@
 package post;
 
 import java.util.List;
-import org.w3c.dom.Comment;
 
 public class Post {
 	private String subtitle;
@@ -59,14 +58,13 @@ public class Post {
 		}
 
 		//Add Comment
-		public void addComment(int id, String author, String text, String date){
-				comments.add(new Comment(id, author, text, date) {});
-		}
-
+		public void addComment(Comment comment){
+			comments.add(comment);
+	}
 		//Remove Comment
 		public void removeComment(int id){
 			for (int i = 0; i < comments.size(); i++) {
-				if (comments.get(i).getId() == id){
+				if ( this.getComments().get(i).getId() == id ){
 					comments.remove(i);
 				}
 			}
@@ -74,11 +72,10 @@ public class Post {
 			System.out.println("{COMMENT DELETED}");
 			System.out.println("/n");
 		}
-
 		//Show Comments
 		public void showComments(){
 			for (int i = 0; i < comments.size(); i++) {
-				System.out.println(" Comment " + comments.get(i).getId() + " by " + comments.get(i).getAuthor() + " on " + comments.get(i).getDate());
+				System.out.println(" Comment " + this.getComments().get(i).getId() + " by " + comments.get(i).getAuthor() + " on " + comments.get(i).getDate());
 				System.out.println("/n" + comments.get(i).getText());
 				System.out.println("/n");
 			}
