@@ -139,7 +139,7 @@ public class Account {
     //Mostra posts:
 	public void showPosts(){
 		for (int i = 0; i < posts.size(); i++) {
-			System.out.println(" Comment " + this.getPosts().get(i).getId() + "\n" + this.posts.get(i).getSubtitle() + "\nAutor: " + this.name);
+			System.out.println(" Comment " + this.getPosts().get(i).getId() + "\n" + this.getPosts().get(i).getSubtitle() + "\nAutor: " + this.name);
 		}
 	}
 
