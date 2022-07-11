@@ -22,7 +22,8 @@ public class Account {
     private String semester;
     private List<Follower> followers;
     private List<Post> posts;
-    private Map<String, ExamEvents> exams;
+    private List<ExamEvents> exams;
+
 //  Construtor Padrão
 
     public Account(String name, String user, String password, String email, String course, String semester) {
@@ -35,7 +36,7 @@ public class Account {
 	this.semester = semester;
 	this.followers = new ArrayList();
 	this.posts = new ArrayList();
-	this.exams = new HashMap<String, ExamEvents>();
+	this.exams = new ArrayList();
     }
 
 // Métodos Getters e Setters
@@ -101,6 +102,39 @@ public class Account {
 
     public void setPosts(List<Post> posts) {
 	this.posts = posts;
+    }
+    public List<ExamaEvents> getExams() {
+        return exams;
+    }
+    public void setExams(List<ExamsEvent> exams) {
+        this.exams = exams;
+    }
+    
+    public void addExamEvents(String nameExam, String dateExam, String description) {
+        exams.add(new ExamEvents(nameExam, dateExam, description));
+    }
+    public void editExamEventsName(int eventId, String nameExame) {
+        for (int i = 0; i < exams.size(); i++) {
+            if (exams.get(i).getEventId() == eventId) {
+                exams.get(i).setNameExam(eventName);
+            }
+        }
+    }
+
+    public void editExamEventsDate(int eventId, String date) {
+        for (int i = 0; i < exams.size(); i++) {
+            if (exams.get(i).getEventId() == eventId) {
+                exams.get(i).setDateExam(eventDate);
+            }
+        }
+    }
+    public void removeExamEvent(int eventId) {
+        for (int i = 0; i < exams.size(); i++) {
+            if (exams.get(i).getEventId() == eventId) {
+                exams.remove(i);
+            }
+        }
+        Alert_FX.info("{EVENT DELETED}");
     }
 
 }
