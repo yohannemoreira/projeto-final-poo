@@ -70,7 +70,7 @@ public class Post {
 
 	//Add Comment
 	public void addComment(int id, String author, String text, String date){
-			comments.add(new Comment(id, author, text, date) {});
+			comments.add(new Comment(id, author, text, date));
 	}
 
 	//Remove Comment
