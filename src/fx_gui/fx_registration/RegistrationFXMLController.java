@@ -78,6 +78,7 @@ public class RegistrationFXMLController implements Initializable {
 	    alert_registration.setTitle("Conta Já cadastrada");
 	    alert_registration.setContentText("Esse E-mail já está sendo utilizado!");
 	    alert_registration.showAndWait();
+	    // criar comandos para limpar os textField (setar neles " ")
 	}
     }
 
