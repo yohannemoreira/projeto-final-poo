@@ -136,5 +136,11 @@ public class Account {
         }
         Alert_FX.info("{EVENT DELETED}");
     }
+    //Mostra posts:
+	public void showPosts(){
+		for (int i = 0; i < getPosts.size(); i++) {
+			System.out.println(" Comment " + this.getPosts().get(i).getId() + "\n" + this.getPosts.get(i).getSubtitle() + "\nAutor: " + this.getName);
+		}
+	}
 
 }
