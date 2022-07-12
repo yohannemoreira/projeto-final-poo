@@ -3,6 +3,7 @@ package account;
 import Events.ExamEvents;
 import java.util.Collection;
 
+import account.exceptions.ExistingUserException;
 import account.exceptions.NotFoundException;
 import account.exceptions.RegisteredAccountException;
 
@@ -27,15 +28,11 @@ public class AccountController {
 	accounts.addAccount(account);
     }
 
-    public void removeAccount(Account account) throws NotFoundException {
+    public void removeAccount(Account account) throws NotFoundException{
 	accounts.removeAccount(account);
     }
 
-    public void editAccount(Account account) {
-
-    }
-
-    public Account findAccount(String email) throws NotFoundException {
+    public Account findAccount(String email) throws NotFoundException{
 	return accounts.findAccount(email);
     }
 
