@@ -4,7 +4,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 
-public class profile {
+public class Profile {
 
 	private JFrame frame;
 
@@ -15,7 +15,7 @@ public class profile {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					profile window = new profile();
+					Profile window = new Profile();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -27,7 +27,7 @@ public class profile {
 	/**
 	 * Create the application.
 	 */
-	public profile() {
+	public Profile() {
 		initialize();
 	}
 

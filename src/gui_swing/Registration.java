@@ -4,7 +4,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 
-public class registration {
+public class Registration {
 
 	private JFrame frame;
 
@@ -15,7 +15,7 @@ public class registration {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					registration window = new registration();
+					Registration window = new Registration();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -27,7 +27,7 @@ public class registration {
 	/**
 	 * Create the application.
 	 */
-	public registration() {
+	public Registration() {
 		initialize();
 	}
 
