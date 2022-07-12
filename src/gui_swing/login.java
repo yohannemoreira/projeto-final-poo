@@ -75,7 +75,8 @@ public class login {
 		txtEmail.setColumns(10);
 		
 		JLabel label = new JLabel("New label");
-		label.setIcon(new ImageIcon(login.class.getResource("/img/group.png")));
+		ImageIcon imagem = new ImageIcon(Login.class.getResource("/image/group.png"));
+		label.setIcon(new ImageIcon(imagem .getImage().getScaledInstance(130, 120, Image.SCALE_DEFAULT)));
 		GridBagConstraints gbc_label = new GridBagConstraints();
 		
 		gbc_label.gridheight = 10;
