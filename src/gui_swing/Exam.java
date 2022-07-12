@@ -1,4 +1,4 @@
-package telas;
+package gui_swing;
 
 import java.awt.EventQueue;
 
@@ -173,7 +173,7 @@ public class Exam {
 		gbc_btnNewButton.gridx = 2;
 		gbc_btnNewButton.gridy = 7;
 		panel.add(btnNewButton, gbc_btnNewButton);
-		ImageIcon image = new ImageIcon(Exam.class.getResource("/image/group.png"));
+		ImageIcon image = new ImageIcon(Exam.class.getResource("/img/exame.png"));
 		
 		
 		
