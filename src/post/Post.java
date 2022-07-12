@@ -53,7 +53,7 @@ public class Post {
 	}
 	
 	//Comments
-<<<<<<< HEAD
+
 	public List<Comment> getComments(){
 		return comments;
 	}
@@ -64,17 +64,13 @@ public class Post {
 	}
 
 	//Remove Comment
-	public void removeComment(int id){
+	public void removeComment1(int id){
 		for (int i = 0; i < comments.size(); i++) {
 			if (comments.get(i).getId() == id){
 				comments.remove(i);
 			}
-=======
-		public List<Comment> getComments(){
-			return comments;
->>>>>>> f6982ec7ff9aae200f3103c84a127b0bf86b6cd5
 		}
-
+		}
 		//Add Comment
 		public void addComment(Comment comment){
 			comments.add(comment);

@@ -18,8 +18,7 @@ public class ExamEvents {
     private String description;
     private String eventId;
 
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-    String date = formatter.format(now);
+   
 
     public ExamEvents(String nameExam, String dateExam, String description) {
 	this.nameExam = nameExam;
@@ -49,22 +48,6 @@ public class ExamEvents {
 
     public void setDescription(String description) {
 	this.description = description;
-    }
-
-    public DateTimeFormatter getFormatter() {
-	return formatter;
-    }
-
-    public void setFormatter(DateTimeFormatter formatter) {
-	this.formatter = formatter;
-    }
-
-    public String getDate() {
-	return date;
-    }
-
-    public void setDate(String date) {
-	this.date = date;
     }
 
     public String getEventId() {

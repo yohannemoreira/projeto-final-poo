@@ -1,3 +1,5 @@
+package post;
+
 public class PostCollectionController {
 
 	    private PostCollection posts;
