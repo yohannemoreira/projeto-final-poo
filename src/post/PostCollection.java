@@ -16,6 +16,10 @@ public class PostCollection implements IPostCollection{
 	public void addPost(Post post) {
 		postCollection.add(post);
 	}
+	    /**
+* Recupera uma coleção de posr.
+* @return A coleção de post.
+*/
 	public ArrayList<Post> getPostCollection(){
 		return postCollection;
 	}
