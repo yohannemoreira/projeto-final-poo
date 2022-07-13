@@ -20,6 +20,7 @@ import javax.swing.SwingConstants;
 
 import account.Account;
 import account.AccountCollection;
+import account.exceptions.ExistingUserException;
 import account.exceptions.NotFoundException;
 import account.exceptions.RegisteredAccountException;
 import account.facade.FacadeAccount;
