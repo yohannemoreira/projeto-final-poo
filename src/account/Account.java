@@ -53,6 +53,11 @@ public class Account {
     }
 
 // Métodos Getters e Setters
+	
+/**
+* Recupera o usuário da conta.
+* @return O usuário da conta.
+*/
     public String getUser() {
 	return user;
     }
@@ -60,15 +65,20 @@ public class Account {
     public void setUser(String user) {
 	this.user = user;
     }
-
+	/**
+* Recupera o nome da conta.
+* @return O nome da conta.
+*/
     public String getName() {
 	return name;
     }
-
-    public void setLogin(String login) {
-	this.user = login;
+    public void setName(String name){
+        this.name = name;    
     }
-
+   	/**
+* Recupera a senha da conta.
+* @return A senha da conta.
+*/
     public String getPassword() {
 	return password;
     }
@@ -76,7 +86,10 @@ public class Account {
     public void setPassword(String password) {
 	this.password = password;
     }
-
+	/**
+* Recupera o email da conta.
+* @return O email da conta.
+*/
     public String getEmail() {
 	return email;
     }
@@ -84,7 +97,10 @@ public class Account {
     public void setEmail(String email) {
 	this.email = email;
     }
-
+/**
+* Recupera o curso da conta.
+* @return O curso da conta.
+*/
     public String getCourse() {
 	return course;
     }
@@ -92,7 +108,10 @@ public class Account {
     public void setCourse(String course) {
 	this.course = course;
     }
-
+/**
+* Recupera o semestre da conta.
+* @return O semestre da conta.
+*/
     public String getSemester() {
 	return semester;
     }
@@ -100,7 +119,10 @@ public class Account {
     public void setSemester(String semester) {
 	this.semester = semester;
     }
-
+/**
+* Recupera os seguidores da conta.
+* @return Os seguidores da conta.
+*/
     public List<Follower> getFollowers() {
 	return followers;
     }
@@ -108,7 +130,10 @@ public class Account {
     public void setFollowers(List<Follower> followers) {
 	this.followers = followers;
     }
-
+/**
+* Recupera o post da conta.
+* @return O post da conta.
+*/
     public List<Post> getPosts() {
 	return posts;
     }
@@ -116,6 +141,10 @@ public class Account {
     public void setPosts(List<Post> posts) {
 	this.posts = posts;
     }
+	/**
+* Recupera a avaliação do evento.
+* @return A avaliação do evento.
+*/
     public List<ExamEvents> getExams() {
         return exams;
     }
@@ -123,7 +152,11 @@ public class Account {
         this.exams = exams;
     }
     
-	// descobrir numuro de exames
+	// descobrir numero de exames
+	/**
+* Recupera o numero de avaliações.
+* @return O numero de avaliações.
+*/
     public int getExamNumber(){
 	  return  this.exams.length;
     }
