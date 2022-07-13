@@ -9,6 +9,8 @@ import java.awt.GridBagLayout;
 import java.awt.CardLayout;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import java.awt.Font;
@@ -19,12 +21,27 @@ import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import javax.swing.UIManager;
 import java.awt.SystemColor;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public static void main(String[] args) {
+public class Exam implements ActionListener{
+
+	private JFrame frmAvaliao;
+	private JTextField textField;
+	private JTextField txtDescription;
+	private JTextField txtDate;
+	private JTextField txtActivity;
+	private JButton registrationButton;
+	private  static String email;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Exam window = new Exam();
+					Exam window = new Exam("cmatheuslf@gmail.com");
 					window.frmAvaliao.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -39,6 +56,9 @@ public static void main(String[] args) {
 	public Exam(String email) {
 		this.email = email;
 		initialize();
+	}
+	public JFrame getFrame() {
+		return frmAvaliao;
 	}
 
 	/**
