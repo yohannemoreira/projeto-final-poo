@@ -1,3 +1,12 @@
+/**
+ * Classe Settings.
+ *
+ * @author Yohanne e Carlos Matheus
+ * @version 2.0
+ * <br>
+ * Copyright (C) 2022 Universidade Federal do
+Ceará.
+ */
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
