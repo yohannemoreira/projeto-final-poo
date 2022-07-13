@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 /**
  * Classe ExamEvents.
  *
@@ -24,13 +20,18 @@ public class ExamEvents {
     private String description;
     private int eventId;
 
-   
-
+   /**
+* Cria um evento de Avaliação a partir do nome da avaliação, da data, da descrição e da Identificação do evento.
+* @param nameExame O nome dado a um evento de avaliação.
+* @param dateExam Data da realização de um evento de avaliação.
+* @param description Descrição do evento de avaliação.
+* @param examId Identificação do evento de avaliação.
+*/
     public ExamEvents(String nameExam, String dateExam, String description, int examId) {
 	this.nameExam = nameExam;
 	this.dateExam = dateExam;
 	this.description = description;
-    this.eventId = examId;
+        this.eventId = examId;
     }
     public int getEventId() {
         return eventId;
