@@ -22,7 +22,10 @@ class Follower {
 	this.follow = follow;
 	this.follower = follower;
     }
-
+/**
+* Recupera a seguida .
+* @return A seguida.
+*/
     public Account getFollow() {
 	return follow;
     }
@@ -30,7 +33,10 @@ class Follower {
     public void setFollow(Account follow) {
 	this.follow = follow;
     }
-
+/**
+* Recupera o seguidor.
+* @return O seguidor.
+*/
     public Account getFollower() {
 	return follower;
     }
