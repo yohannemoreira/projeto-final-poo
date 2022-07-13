@@ -16,6 +16,7 @@ package account.facade;
 import account.Account;
 import account.AccountCollection;
 import account.AccountController;
+import account.exceptions.ExistingUserException;
 import account.exceptions.NotFoundException;
 import account.exceptions.RegisteredAccountException;
 import java.util.Collection;
@@ -40,7 +41,7 @@ public class FacadeAccount {
 	return cntrlAccount.getAccounts();
     }
 
-    public void addAccount(Account account) throws RegisteredAccountException {
+    public void addAccount(Account account) throws RegisteredAccountException, ExistingUserException{
 	cntrlAccount.addAccount(account);
     }
 
