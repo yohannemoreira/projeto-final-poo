@@ -113,7 +113,7 @@ public class Account {
     
 	// descobrir numuro de exames
     public int getExamNumber(){
-	  return  this.exams.length;
+	  return  this.exams.size();
     }
     public void addExamEvents(String nameExam, String dateExam, String description, int examId) {
         exams.add(new ExamEvents(nameExam, dateExam, description, examId));

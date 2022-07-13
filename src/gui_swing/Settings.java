@@ -8,6 +8,9 @@ import java.awt.GridBagLayout;
 import java.awt.Image;
 
 import javax.swing.JPanel;
+
+import account.facade.FacadeAccount;
+
 import java.awt.GridBagConstraints;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -193,20 +196,12 @@ public class Settings{
 						}
 					}
 				});
-		//event remove account verificar função de exclusão de conta
-				removeAccount.addActionListener( new ActionListener() {
-					public void actionPerformed(ActionEvent event){
-						if(event.getSource() == removeAccount) {
-							FacadeAccount.getInstance().getAccounts().getProfiles().get(email).removeAccount();
-							frame.dispose();
-						}
-					}
-				});
+		
 				//event remove account verificar função de exclusão de conta
 				removeAccount.addActionListener( new ActionListener() {
 					public void actionPerformed(ActionEvent event){
 						if(event.getSource() == removeAccount) {
-							FacadeAccount.getInstance().getAccounts().getProfiles().get(email).removeAccount();
+							FacadeAccount.getInstance().getAccounts().getProfiles().remove(email);
 							frame.dispose();
 						}
 					}
@@ -217,7 +212,7 @@ public class Settings{
 					public void actionPerformed(ActionEvent event){
 						if(event.getSource() == back) {
 							frame.dispose();
-							Profile window = new profile();
+							Profile window = new Profile();
 						}
 					}
 				});

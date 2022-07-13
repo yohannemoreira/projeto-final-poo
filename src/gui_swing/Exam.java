@@ -20,6 +20,9 @@ import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import javax.swing.UIManager;
+
+import account.facade.FacadeAccount;
+
 import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

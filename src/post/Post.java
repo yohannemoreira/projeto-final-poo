@@ -9,13 +9,18 @@ public class Post {
 	private int commentNumber;
 	private String localization;
 	private List<Comment> comments;
-	
+
 	public Post(String subtitle) {
 		this.subtitle = subtitle;
 		this.id = this.hashCode();
 	}
 	
 	//metodos de acesso controlado
+	   
+	/**
+* Recupera a legenda do post.
+* @return A legenda do post.
+*/
 	//legenda
 	public String getSubtitle() {
 		return this.subtitle;
@@ -23,6 +28,10 @@ public class Post {
 	public void setSubtitle(String subtitle) {
 		this.subtitle = subtitle;
 	}
+	    /**
+* Recupera a identificação do post.
+* @return A identificação do post.
+*/
 	//id
 	public int getId() {
 		return this.id;
@@ -37,13 +46,21 @@ public class Post {
 	public void setLocalization(String localization) {
 		this.localization = localization;
 	}
+	    /**
+* Recupera o número de curtidas do post.
+* @return O número de curtidas do post.
+*/
 	//curtidas
 	public int getLikeNumber() {
 		return this.likeNumber;
 	}
-	public void getLikeNumber(int likeNumber) {
+	public void setLikeNumber(int likeNumber) {
 		this.likeNumber = likeNumber;
 	}
+	    /**
+* Recupera o número de comentários do post.
+* @return O número de comentário do post.
+*/
 	//comentario
 	public int getCommentNumber() {
 		return this.commentNumber;
@@ -51,9 +68,11 @@ public class Post {
 	public void setCommentNumber(int commentNumber) {
 		this.commentNumber = commentNumber;
 	}
-	
+	    /**
+* Recupera uma lista de comentário.
+* @return Uma lista de comentário.
+*/
 	//Comments
-
 	public List<Comment> getComments(){
 		return comments;
 	}

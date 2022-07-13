@@ -14,7 +14,7 @@ interface AccountRegistration {
 	
 	public Account findAccount (String email) throws NotFoundException;
 	
-	public Boolean searchUser(String user) throws ExistingUserException;
+	public Account searchUser(String user) throws ExistingUserException;
 
 	public Collection<Account> list();
 }
