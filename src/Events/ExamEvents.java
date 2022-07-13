@@ -33,6 +33,11 @@ public class ExamEvents {
 	this.description = description;
         this.eventId = examId;
     }
+	
+	/**
+* Recupera a Identificação do evento.
+* @return A Id do evento.
+*/
     public int getEventId() {
         return eventId;
     }
@@ -40,6 +45,11 @@ public class ExamEvents {
     public void setEventId(int eventId) {
         this.eventId = eventId;
     }
+	
+	/**
+* Recupera o nome da avaliação do evento.
+* @return O nome da avaliação do evento.
+*/	
     public String getNameExam() {
 	return nameExam;
     }
@@ -47,7 +57,11 @@ public class ExamEvents {
     public void setNameExam(String nameExam) {
 	this.nameExam = nameExam;
     }
-
+	
+	/**
+* Recupera a data da avaliação do evento.
+* @return A data da avaliação do evento.
+*/
     public String getDateExam() {
 	return dateExam;
     }
@@ -56,6 +70,10 @@ public class ExamEvents {
 	this. dateExam = dateExam;
     }
 
+	/**
+* Recupera a descrição da avaliação do evento.
+* @return A descrição da avaliação do evento.
+*/
     public String getDescription() {
 	return description;
     }
