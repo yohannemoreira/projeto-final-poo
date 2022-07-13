@@ -15,8 +15,7 @@ public class Comment{
     private String author;
     private int id;
     private String date;
-
-    
+  
     /**
 * Cria comentario do post.
 * @param id Identificação do comentário.
@@ -31,8 +30,7 @@ public class Comment{
             this.text = text;
             this.date = date;
             }
-    
-    
+     
             public String getText(){
                 return text;
             }
