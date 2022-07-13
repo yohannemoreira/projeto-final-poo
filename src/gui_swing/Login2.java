@@ -15,12 +15,18 @@ import java.awt.GridBagLayout;
 import java.awt.Image;
 
 import javax.swing.JTextField;
+
+import account.Account;
+import account.exceptions.NotFoundException;
+import account.facade.FacadeAccount;
+
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
@@ -30,8 +36,9 @@ public class Login2 {
 	private JFrame frame;
 	private JTextField txtEmail;
 	private JLabel lblEmail;
-	private JPasswordField passwordField;
+	private JPasswordField txtPassword;
 	private Registration registration;
+	private Profile profile;
 	/**
 	 * Launch the application.
 	 */
@@ -126,15 +133,21 @@ public class Login2 {
 		gbc_lblNewLabel_1.gridy = 3;
 		panel.add(lblNewLabel_1, gbc_lblNewLabel_1);
 		
-		passwordField = new JPasswordField();
-		GridBagConstraints gbc_passwordField = new GridBagConstraints();
-		gbc_passwordField.insets = new Insets(0, 0, 5, 5);
-		gbc_passwordField.fill = GridBagConstraints.HORIZONTAL;
-		gbc_passwordField.gridx = 1;
-		gbc_passwordField.gridy = 8;
-		panel.add(passwordField, gbc_passwordField);
+		txtPassword = new JPasswordField();
+		GridBagConstraints gbc_txtPassword = new GridBagConstraints();
+		gbc_txtPassword.insets = new Insets(0, 0, 5, 5);
+		gbc_txtPassword.fill = GridBagConstraints.HORIZONTAL;
+		gbc_txtPassword.gridx = 1;
+		gbc_txtPassword.gridy = 8;
+		panel.add(txtPassword, gbc_txtPassword);
 		
 		JButton btnLogin = new JButton("ENTRAR");
+		btnLogin.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				loginProfile();
+				}
+		});
 		GridBagConstraints gbc_btnLogin = new GridBagConstraints();
 		gbc_btnLogin.insets = new Insets(0, 0, 5, 5);
 		gbc_btnLogin.gridx = 1;
@@ -187,6 +200,34 @@ public class Login2 {
 		frame.setVisible(true);
 	}
 	
+	protected void loginProfile(){
+		String email = txtEmail.getText();
+		String password = txtPassword.getText();
+		Account account = null;
+		
+		if (txtEmail.getText().isEmpty() || txtPassword.getText().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Preencha todos os campos!",
+					"Entrada Inválida", JOptionPane.WARNING_MESSAGE);
+		}
+		else {
+			try {
+				account = FacadeAccount.getInstance().getAccounts().findAccount(email);
+				if(account.getPassword().equals(password)) {
+					frame.setVisible(false);
+					profile = new Profile(email, account.getName(), account.getCourse(), account.getSemester(), 
+							account.getPassword(), Integer.toString(account.getFollowers().size()));
+				}
+				else {
+					JOptionPane.showMessageDialog(null, "Senha incorreta!",
+							"Erro ao entrar na conta", JOptionPane.WARNING_MESSAGE);
+				}
+			} catch (NotFoundException e) {
+				JOptionPane.showMessageDialog(null, "Esse e-mail não está cadastrado!",
+						"Erro ao entrar na conta", JOptionPane.WARNING_MESSAGE);
+			}
+		}
+		
+	}
 	
 
 }

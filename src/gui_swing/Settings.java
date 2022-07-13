@@ -31,7 +31,11 @@ public class Settings{
 
 	private JFrame frame;
 	private static String email;
-
+	private  static String name;
+	private  static String course;
+	private  static String semester;
+	private  static String password;
+	private  static String followers;
 	/**
 	 * Launch the application.
 	 */
@@ -39,7 +43,7 @@ public class Settings{
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Settings window = new Settings("cmatheuslf@gmail.com");
+					Settings window = new Settings(email, name, course, semester, password, followers);
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -51,11 +55,17 @@ public class Settings{
 	/**
 	 * Create the application.
 	 */
-	public Settings(String email) {
+	public Settings(String email, String name, String course, String semester, String password,
+			String followers) {
+		super();
 		this.email = email;
+		this.name = name;
+		this.course = course;
+		this.semester = semester;
+		this.password = password;
+		this.followers = followers;
 		initialize();
 	}
-
 	/**
 	 * Initialize the contents of the frame.
 	 */
@@ -169,7 +179,7 @@ public class Settings{
 		frame.getContentPane().add(panel_1, gbc_panel_1);
 		
 		JLabel settings = new JLabel("");
-		ImageIcon image = new ImageIcon(Exam.class.getResource("/image/group.png"));
+		ImageIcon image = new ImageIcon(Exam.class.getResource("/img/group.png"));
 		settings.setIcon(new ImageIcon(image.getImage().getScaledInstance(130, 120, Image.SCALE_DEFAULT)));
 		panel_1.add(settings);
 		
@@ -179,7 +189,7 @@ public class Settings{
 						if(event.getSource() == editAccount) {
 							try {
 								frame.dispose();
-								Exam window = new Exam("cmatheuslf@gmail.com");
+								Exam window = new Exam(email);
 								window.getFrame().setVisible(true);
 							} catch (Exception e) {
 								e.printStackTrace();
@@ -212,7 +222,7 @@ public class Settings{
 					public void actionPerformed(ActionEvent event){
 						if(event.getSource() == back) {
 							frame.dispose();
-							Profile window = new Profile();
+							Profile window = new Profile(email, name, course, semester, password, followers);
 						}
 					}
 				});
@@ -225,6 +235,9 @@ public class Settings{
 						}
 					}
 				});
+				
+frame.setVisible(true);
+				
 	}
 
 	//event
