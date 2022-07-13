@@ -121,18 +121,7 @@ public class Settings{
 		gbc_editAccount.gridx = 0;
 		gbc_editAccount.gridy = 1;
 		panel.add(editAccount, gbc_editAccount);
-		
-		
-		JButton status = new JButton("Ver status");
-		status.setForeground(Color.YELLOW);
-		status.setBackground(Color.DARK_GRAY);
-		GridBagConstraints gbc_status = new GridBagConstraints();
-		gbc_status.fill = GridBagConstraints.HORIZONTAL;
-		gbc_status.insets = new Insets(0, 0, 5, 5);
-		gbc_status.gridx = 0;
-		gbc_status.gridy = 2;
-		panel.add(status, gbc_status);
-		
+				
 		JButton removeAccount = new JButton("Excluir conta");
 		removeAccount.setForeground(Color.YELLOW);
 		removeAccount.setBackground(Color.DARK_GRAY);
@@ -140,7 +129,7 @@ public class Settings{
 		gbc_removeAccount.fill = GridBagConstraints.HORIZONTAL;
 		gbc_removeAccount.insets = new Insets(0, 0, 5, 5);
 		gbc_removeAccount.gridx = 0;
-		gbc_removeAccount.gridy = 3;
+		gbc_removeAccount.gridy = 2;
 		panel.add(removeAccount, gbc_removeAccount);
 		
 		JButton back = new JButton("Voltar");
@@ -150,7 +139,7 @@ public class Settings{
 		gbc_back.fill = GridBagConstraints.HORIZONTAL;
 		gbc_back.insets = new Insets(0, 0, 5, 5);
 		gbc_back.gridx = 0;
-		gbc_back.gridy = 4;
+		gbc_back.gridy = 3;
 		panel.add(back, gbc_back);
 		
 		JButton exit = new JButton("Sair");
@@ -161,7 +150,7 @@ public class Settings{
 		gbc_exit.ipadx = 50;
 		gbc_exit.insets = new Insets(0, 0, 5, 5);
 		gbc_exit.gridx = 0;
-		gbc_exit.gridy = 5;
+		gbc_exit.gridy = 4;
 		panel.add(exit, gbc_exit);
 		
 		Component horizontalStrut = Box.createHorizontalStrut(20);
