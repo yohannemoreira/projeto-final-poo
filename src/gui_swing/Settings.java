@@ -10,19 +10,24 @@ import java.awt.Image;
 import javax.swing.JPanel;
 import java.awt.GridBagConstraints;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.Insets;
 import java.awt.Button;
 import java.awt.SystemColor;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.Component;
 import javax.swing.Box;
 import javax.swing.ImageIcon;
 import java.awt.FlowLayout;
 
-public class Settings {
+public class Settings{
 
 	private JFrame frame;
+	private static String email;
 
 	/**
 	 * Launch the application.
@@ -31,7 +36,7 @@ public class Settings {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Settings window = new Settings();
+					Settings window = new Settings("cmatheuslf@gmail.com");
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -43,7 +48,8 @@ public class Settings {
 	/**
 	 * Create the application.
 	 */
-	public Settings() {
+	public Settings(String email) {
+		this.email = email;
 		initialize();
 	}
 
@@ -99,6 +105,7 @@ public class Settings {
 		gbc_editAccount.gridx = 0;
 		gbc_editAccount.gridy = 1;
 		panel.add(editAccount, gbc_editAccount);
+		
 		
 		JButton status = new JButton("Ver status");
 		status.setForeground(Color.YELLOW);
@@ -159,11 +166,73 @@ public class Settings {
 		frame.getContentPane().add(panel_1, gbc_panel_1);
 		
 		JLabel settings = new JLabel("");
-		ImageIcon image = new ImageIcon(Exam.class.getResource("/image/configuracao.png"));
+		ImageIcon image = new ImageIcon(Exam.class.getResource("/image/group.png"));
 		settings.setIcon(new ImageIcon(image.getImage().getScaledInstance(130, 120, Image.SCALE_DEFAULT)));
 		panel_1.add(settings);
 		
+		//event registraastion
+				editAccount.addActionListener( new ActionListener() {
+					public void actionPerformed(ActionEvent event){
+						if(event.getSource() == editAccount) {
+							try {
+								frame.dispose();
+								Exam window = new Exam("cmatheuslf@gmail.com");
+								window.getFrame().setVisible(true);
+							} catch (Exception e) {
+								e.printStackTrace();
+							}
+							
+						}
+					}
+				});
+		//event status
+				status.addActionListener( new ActionListener() {
+					public void actionPerformed(ActionEvent event){
+						if(event.getSource() == status) {
+							status.setText("tchau");
+						}
+					}
+				});
+		//event remove account verificar função de exclusão de conta
+				removeAccount.addActionListener( new ActionListener() {
+					public void actionPerformed(ActionEvent event){
+						if(event.getSource() == removeAccount) {
+							FacadeAccount.getInstance().getAccounts().getProfiles().get(email).removeAccount();
+							frame.dispose();
+						}
+					}
+				});
+				//event remove account verificar função de exclusão de conta
+				removeAccount.addActionListener( new ActionListener() {
+					public void actionPerformed(ActionEvent event){
+						if(event.getSource() == removeAccount) {
+							FacadeAccount.getInstance().getAccounts().getProfiles().get(email).removeAccount();
+							frame.dispose();
+						}
+					}
+				});
 				
+				//event back verificar para onde ira retornar
+				back.addActionListener( new ActionListener() {
+					public void actionPerformed(ActionEvent event){
+						if(event.getSource() == back) {
+							frame.dispose();
+							Profile window = new profile();
+						}
+					}
+				});
+				
+				//event exit
+				exit.addActionListener( new ActionListener() {
+					public void actionPerformed(ActionEvent event){
+						if(event.getSource() == exit) {
+							frame.dispose();
+						}
+					}
+				});
 	}
+
+	//event
+	
 
 }
