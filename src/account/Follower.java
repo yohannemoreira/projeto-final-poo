@@ -23,7 +23,7 @@ class Follower {
 	this.follower = follower;
     }
 /**
-* Recupera a seguida .
+* Recupera a seguida.
 * @return A seguida.
 */
     public Account getFollow() {
