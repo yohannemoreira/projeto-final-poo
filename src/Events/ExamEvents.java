@@ -47,8 +47,8 @@ public class ExamEvents {
     }
 	
 	/**
-* Recupera o nome da avaliação do evento.
-* @return O nome da avaliação do evento.
+* Recupera o nome da avaliação.
+* @return O nome da avaliação.
 */	
     public String getNameExam() {
 	return nameExam;
@@ -59,8 +59,8 @@ public class ExamEvents {
     }
 	
 	/**
-* Recupera a data da avaliação do evento.
-* @return A data da avaliação do evento.
+* Recupera a data da avaliação.
+* @return A data da avaliação.
 */
     public String getDateExam() {
 	return dateExam;
@@ -71,8 +71,8 @@ public class ExamEvents {
     }
 
 	/**
-* Recupera a descrição da avaliação do evento.
-* @return A descrição da avaliação do evento.
+* Recupera a descrição da avaliação.
+* @return A descrição da avaliação.
 */
     public String getDescription() {
 	return description;
