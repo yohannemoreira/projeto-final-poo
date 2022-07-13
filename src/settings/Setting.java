@@ -1,16 +1,6 @@
-/**
- * Classe Setting.
- *
- * @author Bruna e Gabriela
- * @version 1.0
- * <br>
- * Copyright (C) 2022 Universidade Federal do
-Ceará.
- */
 package settings;
 
 public class Setting {
-	// atributos
 	public String personalInformation;
 	public String accountStatus;
 	public String activityStatus;

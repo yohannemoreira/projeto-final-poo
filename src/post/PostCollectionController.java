@@ -1,12 +1,3 @@
-/**
- * Classe Post Collection.
- *
- * @author Carlor Matheus
- * @version 2.0
- * <br>
- * Copyright (C) 2022 Universidade Federal do
-Ceará.
- */
 package post;
 
 public class PostCollectionController {

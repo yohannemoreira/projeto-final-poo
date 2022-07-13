@@ -1,12 +1,7 @@
 /**
- * Classe Registration.
- *
- * @author Yohanne
- * @version 1.0
- * <br>
- * Copyright (C) 2022 Universidade Federal do
-Ceará.
- */
+* @author Yohanne;
+*
+*/
 package gui_swing;
 
 import java.awt.EventQueue;
@@ -25,12 +20,14 @@ import javax.swing.SwingConstants;
 
 import account.Account;
 import account.AccountCollection;
+import account.exceptions.ExistingUserException;
 import account.exceptions.NotFoundException;
 import account.exceptions.RegisteredAccountException;
 import account.facade.FacadeAccount;
 
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Map;
@@ -53,7 +50,7 @@ public class Registration {
 	private JPasswordField txtPassword;
 	private JTextField txtCourse;
 	private JComboBox<String> cbSemester;
-
+	private Login2 login;
 	/**
 	 * Launch the application.
 	 */
@@ -270,6 +267,8 @@ public class Registration {
 		gbc_lblImg3.gridx = 1;
 		gbc_lblImg3.gridy = 12;
 		panel.add(lblImg3, gbc_lblImg3);
+		
+		frame.setVisible(true);
 
 	}
 
@@ -287,17 +286,24 @@ public class Registration {
 			JOptionPane.showMessageDialog(null, "Preencha todos os campos", "Erro ao criar conta",
 					JOptionPane.WARNING_MESSAGE);
 		}
-		
-// resolver erro do user -> passar pro wildnei
 		else {
 			try {
 				FacadeAccount.getInstance().addAccount(new Account(name, user, password, email, course, semester));
-
-			} catch (RegisteredAccountException e) {
+				JOptionPane.showMessageDialog(null, "Conta criada com sucesso! \n Retorne para a tela de login",
+						"Cadastro Finalizado!", JOptionPane.INFORMATION_MESSAGE);
+				frame.setVisible(false);
+				login = new Login2();
+				
+			} 
+			catch (RegisteredAccountException e) {
 				JOptionPane.showMessageDialog(null, "E-mail já cadastrado! \n Tente utilizar outro!",
 						"Erro ao criar conta", JOptionPane.WARNING_MESSAGE);
 			}
-		}
+			catch (ExistingUserException e) {
+				JOptionPane.showMessageDialog(null, "User já cadastrado! \n Tente utilizar outro!",
+						"Erro ao criar conta", JOptionPane.WARNING_MESSAGE);
+			}
+		}	
 	}
-
+	
 }

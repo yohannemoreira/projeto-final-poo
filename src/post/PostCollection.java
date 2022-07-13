@@ -1,12 +1,3 @@
-/**
- * Classe Post Collection.
- *
- * @author Carlos Matheus
- * @version 3.0
- * <br>
- * Copyright (C) 2022 Universidade Federal do
-Ceará.
- */
 package post;
 
 import java.util.ArrayList;

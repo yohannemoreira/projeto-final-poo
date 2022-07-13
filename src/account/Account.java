@@ -1,13 +1,10 @@
 /**
- * Classe Account.
- *
- * @author Bruna, Gabriela e Yohanne
- * @version 3.0
- * <br>
- * Copyright (C) 2022 Universidade Federal do
-Ceará.
+ * @author Yohanne Moreira
+ * version 1.0
+ * since 05-06-2022
  */
 package account;
+
 import Events.ExamEvents;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,7 +15,6 @@ import post.PostCollection;
 
 public class Account {
 
-    // atributos
     private String name;
     private String user;
     private String password;
@@ -26,19 +22,11 @@ public class Account {
     private String course;
     private String semester;
     private List<Follower> followers;
-    private List<Post> posts;
+    private PostCollection posts;
     private List<ExamEvents> exams;
 
 //  Construtor Padrão
-/**
-* Cria uma Conta usando o nome da pessoa, o nome do usuario, a senha, o email, o curso e o semestre.
-* @param name Nome da pessoa da conta.
-* @param user Nome de usuario da pessoa da conta.
-* @param passwoerd Senha da conta.
-* @param email Email da conta.
-* @param course Curso de graduação da conta.
-* @param semester Semestre cursado pela pessoa da conta.
-*/
+
     public Account(String name, String user, String password, String email, String course, String semester) {
 	super();
 	this.name = name;
@@ -53,11 +41,6 @@ public class Account {
     }
 
 // Métodos Getters e Setters
-	
-/**
-* Recupera o usuário da conta.
-* @return O usuário da conta.
-*/
     public String getUser() {
 	return user;
     }
@@ -65,20 +48,15 @@ public class Account {
     public void setUser(String user) {
 	this.user = user;
     }
-	/**
-* Recupera o nome da conta.
-* @return O nome da conta.
-*/
+
     public String getName() {
 	return name;
     }
-    public void setName(String name){
-        this.name = name;    
+
+    public void setLogin(String login) {
+	this.user = login;
     }
-   	/**
-* Recupera a senha da conta.
-* @return A senha da conta.
-*/
+
     public String getPassword() {
 	return password;
     }
@@ -86,10 +64,7 @@ public class Account {
     public void setPassword(String password) {
 	this.password = password;
     }
-	/**
-* Recupera o email da conta.
-* @return O email da conta.
-*/
+
     public String getEmail() {
 	return email;
     }
@@ -97,10 +72,7 @@ public class Account {
     public void setEmail(String email) {
 	this.email = email;
     }
-/**
-* Recupera o curso da conta.
-* @return O curso da conta.
-*/
+
     public String getCourse() {
 	return course;
     }
@@ -108,10 +80,7 @@ public class Account {
     public void setCourse(String course) {
 	this.course = course;
     }
-/**
-* Recupera o semestre da conta.
-* @return O semestre da conta.
-*/
+
     public String getSemester() {
 	return semester;
     }
@@ -119,10 +88,7 @@ public class Account {
     public void setSemester(String semester) {
 	this.semester = semester;
     }
-/**
-* Recupera os seguidores da conta.
-* @return Os seguidores da conta.
-*/
+
     public List<Follower> getFollowers() {
 	return followers;
     }
@@ -130,21 +96,14 @@ public class Account {
     public void setFollowers(List<Follower> followers) {
 	this.followers = followers;
     }
-/**
-* Recupera o post da conta.
-* @return O post da conta.
-*/
-    public List<Post> getPosts() {
+
+    public PostCollection getPosts() {
 	return posts;
     }
 
-    public void setPosts(List<Post> posts) {
+    public void setPosts(PostCollection posts) {
 	this.posts = posts;
     }
-	/**
-* Recupera a avaliação do evento.
-* @return A avaliação do evento.
-*/
     public List<ExamEvents> getExams() {
         return exams;
     }
@@ -152,11 +111,7 @@ public class Account {
         this.exams = exams;
     }
     
-	// descobrir numero de exames
-	/**
-* Recupera o numero de avaliações.
-* @return O numero de avaliações.
-*/
+	// descobrir numuro de exames
     public int getExamNumber(){
 	  return  this.exams.length;
     }

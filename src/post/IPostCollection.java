@@ -1,12 +1,3 @@
-/**
- * Classe Interface Post.
- *
- * @author Carlos Matheus
- * @version 1.0
- * <br>
- * Copyright (C) 2022 Universidade Federal do
-Ceará.
- */
 package post;
 
 public interface IPostCollection {

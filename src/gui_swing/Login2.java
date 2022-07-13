@@ -1,12 +1,7 @@
 /**
- * Classe Login.
- *
- * @author Yohanne.
- * @version 2.0
- * <br>
- * Copyright (C) 2022 Universidade Federal do
-Ceará.
- */
+* @author Yohanne;
+*
+*/
 package gui_swing;
 
 import java.awt.EventQueue;
@@ -22,6 +17,9 @@ import java.awt.Image;
 import javax.swing.JTextField;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
@@ -33,7 +31,7 @@ public class Login2 {
 	private JTextField txtEmail;
 	private JLabel lblEmail;
 	private JPasswordField passwordField;
-
+	private Registration registration;
 	/**
 	 * Launch the application.
 	 */
@@ -55,6 +53,7 @@ public class Login2 {
 	 */
 	public Login2() {
 		initialize();
+		
 	}
 
 	/**
@@ -62,7 +61,7 @@ public class Login2 {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 600, 600);
+		frame.setBounds(100, 100, 600, 520);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JPanel panel = new JPanel();
@@ -70,9 +69,9 @@ public class Login2 {
 		frame.getContentPane().add(panel, BorderLayout.CENTER);
 		GridBagLayout gbl_panel = new GridBagLayout();
 		gbl_panel.columnWidths = new int[]{66, 238, 330, 0, 0};
-		gbl_panel.rowHeights = new int[]{0, 0, 75, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+		gbl_panel.rowHeights = new int[]{0, 0, 75, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 45, 0};
 		gbl_panel.columnWeights = new double[]{0.0, 0.0, 0.0, 1.0, Double.MIN_VALUE};
-		gbl_panel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gbl_panel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		panel.setLayout(gbl_panel);
 		
 		JLabel lblNewLabel = new JLabel("Papillon");
@@ -117,7 +116,7 @@ public class Login2 {
 		gbc_lblPassword.gridy = 7;
 		panel.add(lblPassword, gbc_lblPassword);
 		
-		JLabel lblNewLabel_1 = new JLabel("");
+		JLabel lblNewLabel_1 = new JLabel();
 		ImageIcon img = new ImageIcon(Login2.class.getResource("/img/group-chat.png"));
 		lblNewLabel_1.setIcon(new ImageIcon(img.getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT)));
 		GridBagConstraints gbc_lblNewLabel_1 = new GridBagConstraints();
@@ -135,12 +134,12 @@ public class Login2 {
 		gbc_passwordField.gridy = 8;
 		panel.add(passwordField, gbc_passwordField);
 		
-		JButton btnNewButton = new JButton("New button");
-		GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
-		gbc_btnNewButton.insets = new Insets(0, 0, 5, 5);
-		gbc_btnNewButton.gridx = 1;
-		gbc_btnNewButton.gridy = 10;
-		panel.add(btnNewButton, gbc_btnNewButton);
+		JButton btnLogin = new JButton("ENTRAR");
+		GridBagConstraints gbc_btnLogin = new GridBagConstraints();
+		gbc_btnLogin.insets = new Insets(0, 0, 5, 5);
+		gbc_btnLogin.gridx = 1;
+		gbc_btnLogin.gridy = 10;
+		panel.add(btnLogin, gbc_btnLogin);
 		
 		JLabel lblTXT1 = new JLabel("Ainda não se inscreveu?");
 		lblTXT1.setForeground(new Color(255, 215, 0));
@@ -161,12 +160,33 @@ public class Login2 {
 		gbc_lblTXT2.gridy = 12;
 		panel.add(lblTXT2, gbc_lblTXT2);
 		
-		JButton btnNewButton_1 = new JButton("FAZER CADASTRO");
-		GridBagConstraints gbc_btnNewButton_1 = new GridBagConstraints();
-		gbc_btnNewButton_1.insets = new Insets(0, 0, 5, 5);
-		gbc_btnNewButton_1.gridx = 2;
-		gbc_btnNewButton_1.gridy = 14;
-		panel.add(btnNewButton_1, gbc_btnNewButton_1);
+		JButton btnFrameRegistration = new JButton("FAZER CADASTRO");
+		btnFrameRegistration.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+				registration = new Registration();
+				}
+		});
+		GridBagConstraints gbc_btnFrameRegistration = new GridBagConstraints();
+		gbc_btnFrameRegistration.insets = new Insets(0, 0, 5, 5);
+		gbc_btnFrameRegistration.gridx = 2;
+		gbc_btnFrameRegistration.gridy = 14;
+		panel.add(btnFrameRegistration, gbc_btnFrameRegistration);
+		ImageIcon img2 = new ImageIcon(Login2.class.getResource("/img/msn.png"));
+		
+		JLabel lblNewLabel_2 = new JLabel();
+		lblNewLabel_2.setIcon(new ImageIcon(img2.getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT)));
+		GridBagConstraints gbc_lblNewLabel_2 = new GridBagConstraints();
+		gbc_lblNewLabel_2.anchor = GridBagConstraints.SOUTHEAST;
+		gbc_lblNewLabel_2.insets = new Insets(0, 0, 0, 0);
+		gbc_lblNewLabel_2.gridx = 0;
+		gbc_lblNewLabel_2.gridy = 16;
+		panel.add(lblNewLabel_2, gbc_lblNewLabel_2);
+		
+		frame.setVisible(true);
 	}
+	
+	
 
 }

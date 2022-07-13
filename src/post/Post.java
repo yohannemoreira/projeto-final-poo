@@ -1,18 +1,8 @@
-/**
- * Classe Post.
- *
- * @author Brun e Carlos Matheus
- * @version 2.0
- * <br>
- * Copyright (C) 2022 Universidade Federal do
-Ceará.
- */
 package post;
 
 import java.util.List;
 
 public class Post {
-	// atributos
 	private String subtitle;
 	private int id;
 	private int likeNumber;
@@ -20,11 +10,6 @@ public class Post {
 	private String localization;
 	private List<Comment> comments;
 	
-/**
-* Cria um Post.
-* @param subtitle Legenda do Post.
-* @param .
-*/
 	public Post(String subtitle) {
 		this.subtitle = subtitle;
 		this.id = this.hashCode();
