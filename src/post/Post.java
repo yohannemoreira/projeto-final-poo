@@ -20,6 +20,11 @@ public class Post {
 	private String localization;
 	private List<Comment> comments;
 	
+/**
+* Cria um Post.
+* @param subtitle Legenda do Post.
+* @param .
+*/
 	public Post(String subtitle) {
 		this.subtitle = subtitle;
 		this.id = this.hashCode();
