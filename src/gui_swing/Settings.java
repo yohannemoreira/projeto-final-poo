@@ -159,7 +159,7 @@ public class Settings {
 		frame.getContentPane().add(panel_1, gbc_panel_1);
 		
 		JLabel settings = new JLabel("");
-		ImageIcon image = new ImageIcon(Exam.class.getResource("/image/group.png"));
+		ImageIcon image = new ImageIcon(Exam.class.getResource("/image/configuracao.png"));
 		settings.setIcon(new ImageIcon(image.getImage().getScaledInstance(130, 120, Image.SCALE_DEFAULT)));
 		panel_1.add(settings);
 		
