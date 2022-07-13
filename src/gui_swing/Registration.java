@@ -293,8 +293,13 @@ public class Registration {
 				frame.setVisible(false);
 				login = new Login2();
 				
-			} catch (RegisteredAccountException e) {
+			} 
+			catch (RegisteredAccountException e) {
 				JOptionPane.showMessageDialog(null, "E-mail já cadastrado! \n Tente utilizar outro!",
+						"Erro ao criar conta", JOptionPane.WARNING_MESSAGE);
+			}
+			catch (ExistingUserException e) {
+				JOptionPane.showMessageDialog(null, "User já cadastrado! \n Tente utilizar outro!",
 						"Erro ao criar conta", JOptionPane.WARNING_MESSAGE);
 			}
 		}	
