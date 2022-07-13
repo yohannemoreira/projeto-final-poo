@@ -21,6 +21,7 @@ import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import javax.swing.UIManager;
 
+import account.exceptions.NotFoundException;
 import account.facade.FacadeAccount;
 
 import java.awt.SystemColor;
@@ -36,6 +37,11 @@ public class Exam implements ActionListener{
 	private JTextField txtActivity;
 	private JButton registrationButton;
 	private  static String email;
+	private  static String name;
+	private  static String course;
+	private  static String semester;
+	private  static String password;
+	private  static String followers;
 
 	/**
 	 * Launch the application.
@@ -44,7 +50,7 @@ public class Exam implements ActionListener{
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Exam window = new Exam("cmatheuslf@gmail.com");
+					Exam window = new Exam(email, name, course, semester, password, followers);
 					window.frmAvaliao.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -56,8 +62,14 @@ public class Exam implements ActionListener{
 	/**
 	 * Create the application.
 	 */
-	public Exam(String email) {
+	public Exam(String email, String name, String course, String semester, String password, String followers) {
+		super();
 		this.email = email;
+		this.name = name;
+		this.course = course;
+		this.semester = semester;
+		this.password = password;
+		this.followers = followers;
 		initialize();
 	}
 	public JFrame getFrame() {
@@ -72,7 +84,7 @@ public class Exam implements ActionListener{
 		frmAvaliao.setAutoRequestFocus(false);
 		frmAvaliao.getContentPane().setBackground(Color.DARK_GRAY);
 		frmAvaliao.setBackground(Color.DARK_GRAY);
-		frmAvaliao.setTitle("Avaliação");
+		frmAvaliao.setTitle("AvaliaÃ§Ã£o");
 		frmAvaliao.setBounds(100, 100, 600, 400);
 		frmAvaliao.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		GridBagLayout gridBagLayout = new GridBagLayout();
@@ -107,7 +119,7 @@ public class Exam implements ActionListener{
 		gbc_imgLabel.gridx = 5;
 		gbc_imgLabel.gridy = 1;
 		panel_1.add(imgLabel, gbc_imgLabel);
-		ImageIcon image = new ImageIcon(Exam.class.getResource("/img/notebook.png"));
+		ImageIcon image = new ImageIcon(Exam.class.getResource("/image/group.png"));
 		imgLabel.setIcon(new ImageIcon(image.getImage().getScaledInstance(130, 120, Image.SCALE_DEFAULT)));
 		
 		JPanel panel = new JPanel();
@@ -125,7 +137,7 @@ public class Exam implements ActionListener{
 		panel.setLayout(gbl_panel);
 		
 		
-		JLabel TitleGeneral = new JLabel("Avaliação");
+		JLabel TitleGeneral = new JLabel("AvaliaÃ§Ã£o");
 		TitleGeneral.setForeground(Color.YELLOW);
 		TitleGeneral.setFont(new Font("Tahoma", Font.PLAIN, 43));
 		GridBagConstraints gbc_TitleGeneral = new GridBagConstraints();
@@ -180,7 +192,7 @@ public class Exam implements ActionListener{
 		panel.add(txtDate, gbc_txtDate);
 		txtDate.setColumns(10);
 		
-		JLabel tDescription = new JLabel("Descrição	");
+		JLabel tDescription = new JLabel("DescriÃ§Ã£o	");
 		GridBagConstraints gbc_tDescription = new GridBagConstraints();
 		gbc_tDescription.anchor = GridBagConstraints.WEST;
 		gbc_tDescription.insets = new Insets(0, 0, 5, 5);
@@ -210,10 +222,8 @@ public class Exam implements ActionListener{
 		gbc_registrationButton.gridy = 7;
 		panel.add(registrationButton, gbc_registrationButton);
 		registrationButton.addActionListener((ActionListener) this);
-		
-		frmAvaliao.setVisible(true);
 	}
-	//evento de cadastro de avaliação
+	//evento de cadastro de avaliaÃ§Ã£o
 	public void actionPerformed(ActionEvent evento) {
 		String activity = txtActivity.getText();
 		String date = txtDate.getText();
