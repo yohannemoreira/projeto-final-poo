@@ -20,6 +20,7 @@ Ceará.
 import java.util.List;
 import java.util.Map;
 import post.Post;
+import post.PostCollection;
 
 public class Account {
 
@@ -45,7 +46,7 @@ public class Account {
 	this.course = course;
 	this.semester = semester;
 	this.followers = new ArrayList();
-	this.posts = new ArrayList();
+	this.posts = new PostCollection();
 	this.exams = new ArrayList();
     }
 
@@ -120,8 +121,12 @@ public class Account {
         this.exams = exams;
     }
     
-    public void addExamEvents(String nameExam, String dateExam, String description) {
-        exams.add(new ExamEvents(nameExam, dateExam, description));
+	// descobrir numuro de exames
+    public int getExamNumber(){
+	  return  this.exams.length;
+    }
+    public void addExamEvents(String nameExam, String dateExam, String description, int examId) {
+        exams.add(new ExamEvents(nameExam, dateExam, description, examId));
     }
     public void editExamEventsName(int eventId, String nameExame) {
         for (int i = 0; i < exams.size(); i++) {
@@ -148,8 +153,8 @@ public class Account {
     }
     //Mostra posts:
 	public void showPosts(){
-		for (int i = 0; i < posts.size(); i++) {
-			System.out.println(" Comment " + this.getPosts().get(i).getId() + "\n" + this.getPosts().get(i).getSubtitle() + "\nAutor: " + this.name);
+		for (int i = 0; i < posts.sizeArray(); i++) {
+			System.out.println(" Comment " + this.getPosts().getPostCollection().get(i).getId() + "\n" + this.getPosts().getPostCollection().get(i).getSubtitle() + "\nAutor: " + this.name);
 		}
 	}
 
