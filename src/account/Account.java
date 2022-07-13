@@ -111,6 +111,10 @@ public class Account {
         this.exams = exams;
     }
     
+	// descobrir numuro de exames
+    public int getExamNumber(){
+	  return  this.exams.length;
+    }
     public void addExamEvents(String nameExam, String dateExam, String description, int examId) {
         exams.add(new ExamEvents(nameExam, dateExam, description, examId));
     }
