@@ -48,7 +48,11 @@ public class Account {
     public void setUser(String user) {
 	this.user = user;
     }
-
+	
+    public void setName(String name) {
+    	this.name = name;
+    }
+	
     public String getName() {
 	return name;
     }
