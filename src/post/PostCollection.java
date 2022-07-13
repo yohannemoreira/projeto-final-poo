@@ -3,9 +3,12 @@ package post;
 import java.util.ArrayList;
 
 public class PostCollection implements IPostCollection{
-	ArrayList<Post> PostCollection;
+	private ArrayList<Post> PostCollection;
 	public void addPost(Post post) {
 		PostCollection.add(post);
+	}
+	public Post getPostCollection(){
+		return PostCollection;
 	}
 	public void removePost(int id) {
 		int indice = -1;

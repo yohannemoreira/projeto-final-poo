@@ -16,16 +16,23 @@ public class ExamEvents {
     private String nameExam;
     private String dateExam;
     private String description;
-    private String eventId;
+    private int eventId;
 
    
 
-    public ExamEvents(String nameExam, String dateExam, String description) {
+    public ExamEvents(String nameExam, String dateExam, String description, int eventId) {
 	this.nameExam = nameExam;
 	this.dateExam = dateExam;
 	this.description = description;
+    this.eventId = eventId;
+    }
+    public int getEventId() {
+        return eventId;
     }
 
+    public void setEventId(int eventId) {
+        this.eventId = eventId;
+    }
     public String getNameExam() {
 	return nameExam;
     }
@@ -50,12 +57,4 @@ public class ExamEvents {
 	this.description = description;
     }
 
-    public String getEventId() {
-        return eventId;
-	    
-    }
-    public void setEventId(String eventId) {
-        this.eventId = eventId;
-    }
-   
 }

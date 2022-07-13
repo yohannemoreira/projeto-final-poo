@@ -64,28 +64,14 @@ public class Post {
 	}
 
 	//Remove Comment
-	public void removeComment1(int id){
+	public void removeComment(int id){
 		for (int i = 0; i < comments.size(); i++) {
 			if (comments.get(i).getId() == id){
 				comments.remove(i);
 			}
 		}
 		}
-		//Add Comment
-		public void addComment(Comment comment){
-			comments.add(comment);
-	}
-		//Remove Comment
-		public void removeComment(int id){
-			for (int i = 0; i < comments.size(); i++) {
-				if ( this.getComments().get(i).getId() == id ){
-					comments.remove(i);
-				}
-			}
-			System.out.println("---------------------------------------------------------------------------");
-			System.out.println("{COMMENT DELETED}");
-			System.out.println("/n");
-		}
+
 		//Show Comments
 		public void showComments(){
 			for (int i = 0; i < comments.size(); i++) {

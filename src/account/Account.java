@@ -21,7 +21,7 @@ public class Account {
     private String course;
     private String semester;
     private List<Follower> followers;
-    private List<Post> posts;
+    private PostCollection posts;
     private List<ExamEvents> exams;
 
 //  Construtor Padrão
@@ -96,11 +96,11 @@ public class Account {
 	this.followers = followers;
     }
 
-    public List<Post> getPosts() {
+    public PostCollection getPosts() {
 	return posts;
     }
 
-    public void setPosts(List<Post> posts) {
+    public void setPosts(PostCollection posts) {
 	this.posts = posts;
     }
     public List<ExamEvents> getExams() {
@@ -113,7 +113,7 @@ public class Account {
     public void addExamEvents(String nameExam, String dateExam, String description) {
         exams.add(new ExamEvents(nameExam, dateExam, description));
     }
-    public void editExamEventsName(String eventId, String nameExame) {
+    public void editExamEventsName(int eventId, String nameExame) {
         for (int i = 0; i < exams.size(); i++) {
             if (exams.get(i).getEventId() == eventId) {
                 exams.get(i).setNameExam(nameExame);
@@ -121,14 +121,14 @@ public class Account {
         }
     }
 
-    public void editExamEventsDate(String eventId, String date) {
+    public void editExamEventsDate(int eventId, String date) {
         for (int i = 0; i < exams.size(); i++) {
             if (exams.get(i).getEventId() == eventId) {
                 exams.get(i).setDateExam(date);
             }
         }
     }
-    public void removeExamEvent(String eventId) {
+    public void removeExamEvent(int eventId) {
         for (int i = 0; i < exams.size(); i++) {
             if (exams.get(i).getEventId() == eventId) {
                 exams.remove(i);
@@ -139,7 +139,7 @@ public class Account {
     //Mostra posts:
 	public void showPosts(){
 		for (int i = 0; i < posts.size(); i++) {
-			System.out.println(" Comment " + this.getPosts().get(i).getId() + "\n" + this.getPosts().get(i).getSubtitle() + "\nAutor: " + this.name);
+			System.out.println(" Comment " + this..getPosts.getPostCollection().get(i).getId() + "\n" + this.getPosts().get(i).getSubtitle() + "\nAutor: " + this.name);
 		}
 	}
 
