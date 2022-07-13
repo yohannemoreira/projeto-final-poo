@@ -218,11 +218,18 @@ public class Exam implements ActionListener{
 		String activity = txtActivity.getText();
 		String date = txtDate.getText();
 		String  description = txtDescription.getText();
-		int id = FacadeAccount.getInstance().getAccounts().getProfiles().get(email).getExamNumber();
+		int id = 0;
+		try {
+			id = FacadeAccount.getInstance().getAccounts().findAccount(email).getExamNumber();
+			FacadeAccount.getInstance().getAccounts().getProfiles().get(email).addExamEvents( activity, date, description, id);
+		} catch (NotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
-		FacadeAccount.getInstance().getAccounts().getProfiles().get(email).addExamEvents( activity, date, description, id);
 		
-		int retorno = JOptionPane.showConfirmDialog(frmAvaliao, "Deseja excluir o aluno?", "Mensagem", JOptionPane.YES_NO_OPTION);
+		
+		int retorno = JOptionPane.showConfirmDialog(frmAvaliao, "Avaliação adicionada", "Mensagem", JOptionPane.YES_NO_OPTION);
 		if (retorno == JOptionPane.YES_OPTION) {
 			frmAvaliao.dispose();			
 		}
