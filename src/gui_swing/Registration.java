@@ -285,8 +285,6 @@ public class Registration {
 			JOptionPane.showMessageDialog(null, "Preencha todos os campos", "Erro ao criar conta",
 					JOptionPane.WARNING_MESSAGE);
 		}
-		
-// resolver erro do user -> passar pro wildnei
 		else {
 			try {
 				FacadeAccount.getInstance().addAccount(new Account(name, user, password, email, course, semester));
@@ -299,9 +297,7 @@ public class Registration {
 				JOptionPane.showMessageDialog(null, "E-mail já cadastrado! \n Tente utilizar outro!",
 						"Erro ao criar conta", JOptionPane.WARNING_MESSAGE);
 			}
-		}
-		
-		
+		}	
 	}
 	
 }

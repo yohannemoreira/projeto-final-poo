@@ -3,24 +3,24 @@ package post;
 import java.util.ArrayList;
 
 public class PostCollection implements IPostCollection{
-	private ArrayList<Post> PostCollection;
+	private ArrayList<Post> postCollection;
 	public void addPost(Post post) {
-		PostCollection.add(post);
+		postCollection.add(post);
 	}
-	public Post getPostCollection(){
-		return PostCollection;
+	public ArrayList<Post> getPostCollection(){
+		return postCollection;
 	}
 	public void removePost(int id) {
 		int indice = -1;
-		if(PostCollection.size()>0) {
-			for(int i = 0; i < PostCollection.size();i++) {
-				if(PostCollection.get(i).getId() == id) {
+		if(postCollection.size()>0) {
+			for(int i = 0; i < postCollection.size();i++) {
+				if(postCollection.get(i).getId() == id) {
 					indice = i;
 				}
 			}
-			PostCollection.remove(PostCollection.get(indice));
+			postCollection.remove(postCollection.get(indice));
 		}
-		else if(PostCollection.size()<=0) {
+		else if(postCollection.size()<=0) {
 			System.out.println("Sem posts");
 		}
 	}
@@ -34,5 +34,8 @@ public class PostCollection implements IPostCollection{
 	}
 	public boolean exist(int id) {
 		return true;
+	}
+	public int sizeArray () {
+		return postCollection.size();
 	}
 }
