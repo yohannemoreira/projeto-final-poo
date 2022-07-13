@@ -20,7 +20,7 @@ public class ExamEvents {
     private String description;
     private int eventId;
 
-   /**
+       /**
 * Cria um evento de Avaliação a partir do nome da avaliação, da data, da descrição e da Identificação do evento.
 * @param nameExame O nome dado a um evento de avaliação.
 * @param dateExam Data da realização de um evento de avaliação.
