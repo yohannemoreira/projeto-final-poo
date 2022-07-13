@@ -66,6 +66,9 @@ public class Settings{
 		this.followers = followers;
 		initialize();
 	}
+	public JFrame getFrame() {
+		return this.frame;
+	}
 	/**
 	 * Initialize the contents of the frame.
 	 */
