@@ -24,7 +24,10 @@ public class AccountController {
 	super();
 	this.accounts = new AccountCollection();
     }
-
+/**
+* Recupera a conta.
+* @return A conta.
+*/
     public AccountCollection getAccounts() {
 	return accounts;
     }
