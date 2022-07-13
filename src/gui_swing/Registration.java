@@ -1,3 +1,7 @@
+/**
+* @author Yohanne;
+*
+*/
 package gui_swing;
 
 import java.awt.EventQueue;
@@ -22,6 +26,7 @@ import account.facade.FacadeAccount;
 
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Map;
@@ -44,7 +49,7 @@ public class Registration {
 	private JPasswordField txtPassword;
 	private JTextField txtCourse;
 	private JComboBox<String> cbSemester;
-
+	private Login2 login;
 	/**
 	 * Launch the application.
 	 */
@@ -261,6 +266,8 @@ public class Registration {
 		gbc_lblImg3.gridx = 1;
 		gbc_lblImg3.gridy = 12;
 		panel.add(lblImg3, gbc_lblImg3);
+		
+		frame.setVisible(true);
 
 	}
 
@@ -283,12 +290,18 @@ public class Registration {
 		else {
 			try {
 				FacadeAccount.getInstance().addAccount(new Account(name, user, password, email, course, semester));
-
+				JOptionPane.showMessageDialog(null, "Conta criada com sucesso! \n Retorne para a tela de login",
+						"Cadastro Finalizado!", JOptionPane.INFORMATION_MESSAGE);
+				frame.setVisible(false);
+				login = new Login2();
+				
 			} catch (RegisteredAccountException e) {
 				JOptionPane.showMessageDialog(null, "E-mail já cadastrado! \n Tente utilizar outro!",
 						"Erro ao criar conta", JOptionPane.WARNING_MESSAGE);
 			}
 		}
+		
+		
 	}
-
+	
 }
