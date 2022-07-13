@@ -3,6 +3,7 @@ package account;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import account.exceptions.ExistingUserException;
 import account.exceptions.NotFoundException;
 import account.exceptions.RegisteredAccountException;
 
@@ -20,13 +21,20 @@ public class AccountCollection implements AccountRegistration {
     }
 
     @Override
-    public void addAccount(Account account) throws RegisteredAccountException {
-	try {
-	    findAccount(account.getEmail());
-	    throw new RegisteredAccountException();
-	}catch (NotFoundException e) {
-	    profiles.put(account.getEmail(), account);
-	} 
+    public void addAccount(Account account) throws RegisteredAccountException, ExistingUserException {
+    	try {
+    		findAccount(account.getEmail());
+    		throw new RegisteredAccountException();
+    	}
+    	catch (NotFoundException e) {
+		} 
+    	try {
+    		searchUser(account.getUser());
+    	}
+    	catch(ExistingUserException e) {
+    		throw new ExistingUserException();
+    	}
+    	profiles.put(account.getEmail(), account);
     }
 
     @Override
@@ -54,8 +62,16 @@ public class AccountCollection implements AccountRegistration {
     }
 
 	@Override //ver se o wild consegue resolver
-	public Boolean searchUser(String user) {
-		return null;
+	//O wild conseguiu ajeitar :)
+	public Account searchUser(String user) throws ExistingUserException{
+		Account search = null;
+		for(Account account : profiles.values()) {
+			if(account.getUser().equalsIgnoreCase(user)) {
+				search = account;
+				throw new ExistingUserException();
+			}
+		}
+		return search;
 	}
 
 }
