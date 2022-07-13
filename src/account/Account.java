@@ -1,14 +1,4 @@
 /**
- * @author Yohanne Moreira
- * version 1.0
- * since 05-06-2022
- */
-package account;
-
-import Events.ExamEvents;
-import java.util.ArrayList;
-import java.util.HashMap;
-/**
  * Classe Account.
  *
  * @author Bruna, Gabriela e Yohanne
@@ -17,6 +7,10 @@ import java.util.HashMap;
  * Copyright (C) 2022 Universidade Federal do
 Ceará.
  */
+package account;
+import Events.ExamEvents;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import post.Post;
@@ -36,7 +30,15 @@ public class Account {
     private List<ExamEvents> exams;
 
 //  Construtor Padrão
-
+/**
+* Cria uma Conta usando o nome da pessoa, o nome do usuario, a senha, o email, o curso e o semestre.
+* @param name Nome da pessoa da conta.
+* @param user Nome de usuario da pessoa da conta.
+* @param passwoerd Senha da conta.
+* @param email Email da conta.
+* @param course Curso de graduação da conta.
+* @param semester Semestre cursado pela pessoa da conta.
+*/
     public Account(String name, String user, String password, String email, String course, String semester) {
 	super();
 	this.name = name;
