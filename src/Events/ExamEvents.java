@@ -26,11 +26,11 @@ public class ExamEvents {
 
    
 
-    public ExamEvents(String nameExam, String dateExam, String description, int eventId) {
+    public ExamEvents(String nameExam, String dateExam, String description, int examId) {
 	this.nameExam = nameExam;
 	this.dateExam = dateExam;
 	this.description = description;
-    this.eventId = eventId;
+    this.eventId = examId;
     }
     public int getEventId() {
         return eventId;
