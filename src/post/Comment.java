@@ -1,5 +1,15 @@
+/**
+ * Classe Comment.
+ *
+ * @author Bruna e Gabriela
+ * @version 1.0
+ * <br>
+ * Copyright (C) 2022 Universidade Federal do
+Ceará.
+ */
 package post;
 public class Comment{
+    // atributos
     private String text;
     private String author;
     private int id;
