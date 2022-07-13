@@ -21,7 +21,7 @@ public class Account {
     private String course;
     private String semester;
     private List<Follower> followers;
-    private List<Post> posts;
+    private PostCollection posts;
     private List<ExamEvents> exams;
 
 //  Construtor Padrão
@@ -96,11 +96,11 @@ public class Account {
 	this.followers = followers;
     }
 
-    public List<Post> getPosts() {
+    public PostCollection getPosts() {
 	return posts;
     }
 
-    public void setPosts(List<Post> posts) {
+    public void setPosts(PostCollection posts) {
 	this.posts = posts;
     }
     public List<ExamEvents> getExams() {
