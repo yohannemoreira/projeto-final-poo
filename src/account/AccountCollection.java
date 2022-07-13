@@ -1,3 +1,12 @@
+/**
+ * Classe Account Collection.
+ *
+ * @author Yohanne e Wildnei.
+ * @version 2.0
+ * <br>
+ * Copyright (C) 2022 Universidade Federal do
+Ceará.
+ */
 package account;
 
 import java.util.Collection;
