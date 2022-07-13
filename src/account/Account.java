@@ -113,7 +113,7 @@ public class Account {
     public void addExamEvents(String nameExam, String dateExam, String description) {
         exams.add(new ExamEvents(nameExam, dateExam, description));
     }
-    public void editExamEventsName(String eventId, String nameExame) {
+    public void editExamEventsName(int eventId, String nameExame) {
         for (int i = 0; i < exams.size(); i++) {
             if (exams.get(i).getEventId() == eventId) {
                 exams.get(i).setNameExam(nameExame);
@@ -121,14 +121,14 @@ public class Account {
         }
     }
 
-    public void editExamEventsDate(String eventId, String date) {
+    public void editExamEventsDate(int eventId, String date) {
         for (int i = 0; i < exams.size(); i++) {
             if (exams.get(i).getEventId() == eventId) {
                 exams.get(i).setDateExam(date);
             }
         }
     }
-    public void removeExamEvent(String eventId) {
+    public void removeExamEvent(int eventId) {
         for (int i = 0; i < exams.size(); i++) {
             if (exams.get(i).getEventId() == eventId) {
                 exams.remove(i);
