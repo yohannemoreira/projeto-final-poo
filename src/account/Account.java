@@ -8,12 +8,22 @@ package account;
 import Events.ExamEvents;
 import java.util.ArrayList;
 import java.util.HashMap;
+/**
+ * Classe Account.
+ *
+ * @author Bruna, Gabriela e Yohanne
+ * @version 3.0
+ * <br>
+ * Copyright (C) 2022 Universidade Federal do
+Ceará.
+ */
 import java.util.List;
 import java.util.Map;
 import post.Post;
 
 public class Account {
 
+    // atributos
     private String name;
     private String user;
     private String password;
@@ -21,7 +31,7 @@ public class Account {
     private String course;
     private String semester;
     private List<Follower> followers;
-    private PostCollection posts;
+    private List<Post> posts;
     private List<ExamEvents> exams;
 
 //  Construtor Padrão
@@ -96,11 +106,11 @@ public class Account {
 	this.followers = followers;
     }
 
-    public PostCollection getPosts() {
+    public List<Post> getPosts() {
 	return posts;
     }
 
-    public void setPosts(PostCollection posts) {
+    public void setPosts(List<Post> posts) {
 	this.posts = posts;
     }
     public List<ExamEvents> getExams() {
