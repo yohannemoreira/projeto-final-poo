@@ -20,6 +20,10 @@ public class AccountCollection implements AccountRegistration {
 
     private Map<String, Account> profiles = new HashMap<String, Account>();
 
+	/**
+* Recupera o perfil da conta.
+* @return O perfil da conta.
+*/
     public Map<String, Account> getProfiles() {
 	return profiles;
     }
