@@ -107,7 +107,7 @@ public class Exam implements ActionListener{
 		gbc_imgLabel.gridx = 5;
 		gbc_imgLabel.gridy = 1;
 		panel_1.add(imgLabel, gbc_imgLabel);
-		ImageIcon image = new ImageIcon(Exam.class.getResource("/image/group.png"));
+		ImageIcon image = new ImageIcon(Exam.class.getResource("/img/notebook.png"));
 		imgLabel.setIcon(new ImageIcon(image.getImage().getScaledInstance(130, 120, Image.SCALE_DEFAULT)));
 		
 		JPanel panel = new JPanel();
@@ -210,6 +210,8 @@ public class Exam implements ActionListener{
 		gbc_registrationButton.gridy = 7;
 		panel.add(registrationButton, gbc_registrationButton);
 		registrationButton.addActionListener((ActionListener) this);
+		
+		frmAvaliao.setVisible(true);
 	}
 	//evento de cadastro de avaliação
 	public void actionPerformed(ActionEvent evento) {

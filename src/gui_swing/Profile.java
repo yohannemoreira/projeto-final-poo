@@ -10,17 +10,24 @@ import java.awt.GridBagLayout;
 import java.awt.Color;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JLabel;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.JList;
 import javax.swing.JSeparator;
 import javax.swing.ListModel;
+
+import account.exceptions.NotFoundException;
+import account.facade.FacadeAccount;
+import post.Post;
+
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.SystemColor;
 
 public class Profile {
 
@@ -136,7 +143,7 @@ public class Profile {
 			}
 		});
 		btnSettings.setForeground(new Color(255, 215, 0));
-		btnSettings.setBackground(Color.DARK_GRAY);
+		btnSettings.setBackground(new Color(29, 29, 29));
 		GridBagConstraints gbc_btnSettings = new GridBagConstraints();
 		gbc_btnSettings.fill = GridBagConstraints.HORIZONTAL;
 		gbc_btnSettings.insets = new Insets(0, 0, 5, 0);
@@ -160,7 +167,7 @@ public class Profile {
 				login = new Login2();
 			}
 		});
-		btnOut.setBackground(Color.DARK_GRAY);
+		btnOut.setBackground(new Color(29, 29, 29));
 		btnOut.setForeground(new Color(255,215,0));
 		GridBagConstraints gbc_btnOut = new GridBagConstraints();
 		gbc_btnOut.fill = GridBagConstraints.HORIZONTAL;
@@ -180,13 +187,13 @@ public class Profile {
 		panel.add(lblPosts, gbc_lblPosts);
 	
 		JList list = new JList();
-		list.setBackground(Color.LIGHT_GRAY);
+		list.setBackground(new Color(29,29,29));
 		DefaultListModel model = new DefaultListModel();
 		model.addElement("Teste");
 		
 		JButton btnExam = new JButton("CADASTRAR ATIVIDADES");
 		btnExam.setForeground(new Color(255, 215, 0));
-		btnExam.setBackground(Color.DARK_GRAY);
+		btnExam.setBackground(new Color(29, 29, 29));
 		GridBagConstraints gbc_btnExam = new GridBagConstraints();
 		gbc_btnExam.anchor = GridBagConstraints.NORTH;
 		gbc_btnExam.insets = new Insets(0, 0, 5, 0);
@@ -209,14 +216,26 @@ public class Profile {
 		gbc_textArea.gridy = 7;
 		panel.add(textArea, gbc_textArea);
 		
-		JButton btnFollow_2_1 = new JButton("SEGUIR");
-		btnFollow_2_1.setForeground(new Color(255, 215, 0));
-		btnFollow_2_1.setBackground(Color.DARK_GRAY);
-		GridBagConstraints gbc_btnFollow_2_1 = new GridBagConstraints();
-		gbc_btnFollow_2_1.fill = GridBagConstraints.HORIZONTAL;
-		gbc_btnFollow_2_1.gridx = 2;
-		gbc_btnFollow_2_1.gridy = 7;
-		panel.add(btnFollow_2_1, gbc_btnFollow_2_1);
+		JButton btnPost = new JButton("POSTAR");
+		btnPost.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			String texto = null;
+				try {
+					textArea.getText();
+					addPostAction(texto, email);
+				} catch (NullPointerException e1) {
+					JOptionPane.showMessageDialog(null, "Não há nada escrito!",
+							"Erro ao fazer publicação", JOptionPane.WARNING_MESSAGE);
+				}
+			}
+		});
+		btnPost.setForeground(new Color(255, 215, 0));
+		btnPost.setBackground(new Color(29, 29, 29));
+		GridBagConstraints gbc_btnPost = new GridBagConstraints();
+		gbc_btnPost.fill = GridBagConstraints.HORIZONTAL;
+		gbc_btnPost.gridx = 2;
+		gbc_btnPost.gridy = 7;
+		panel.add(btnPost, gbc_btnPost);
 		
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setBackground(new Color(29,29,29));
@@ -226,6 +245,16 @@ public class Profile {
 		menuBar.add(mntmNewMenuItem);
 		
 		frame.setVisible(true);
+	}
+	
+	protected void addPostAction(String txt, String email) {
+		try {
+			FacadeAccount.getInstance().findAccount(email).getPosts().getPostCollection().add( new Post(txt));
+		} catch (NotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 
 }
