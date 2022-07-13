@@ -17,7 +17,7 @@ import account.exceptions.RegisteredAccountException;
 
 interface AccountRegistration {
 
-	public void addAccount(Account account) throws RegisteredAccountException ;
+	public void addAccount(Account account) throws RegisteredAccountException, ExistingUserException ;
 
 	public void removeAccount(Account account) throws NotFoundException;
 	
