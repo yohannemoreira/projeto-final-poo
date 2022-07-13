@@ -24,7 +24,7 @@ public class AccountController {
 	this.accounts = accounts;
     }
 
-    public void addAccount(Account account) throws RegisteredAccountException {
+    public void addAccount(Account account) throws RegisteredAccountException, ExistingUserException{
 	accounts.addAccount(account);
     }
 
