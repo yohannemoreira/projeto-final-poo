@@ -1,4 +1,4 @@
-package telas;
+package gui_swing;
 
 import java.awt.EventQueue;
 
@@ -196,7 +196,7 @@ public class Edition{
 						JOptionPane.showMessageDialog(null, "Novo nome cadastrado!",
 								"Sucesso!!!", JOptionPane.INFORMATION_MESSAGE);
 					} catch (NotFoundException e) {
-						JOptionPane.showMessageDialog(null, "Erro! \n RefaÁa o login!",
+						JOptionPane.showMessageDialog(null, "Erro! \n Refa√ßa o login!",
 								"Erro ao editar nome", JOptionPane.WARNING_MESSAGE);
 					}
 					
@@ -213,7 +213,7 @@ public class Edition{
 						JOptionPane.showMessageDialog(null, "Novo User cadastrado!",
 								"Sucesso!!!", JOptionPane.INFORMATION_MESSAGE);
 					} catch (ExistingUserException e) {
-						JOptionPane.showMessageDialog(null, "User j· cadastrado! \n Tente utilizar outro!",
+						JOptionPane.showMessageDialog(null, "User j√° cadastrado! \n Tente utilizar outro!",
 								"Erro ao editar conta", JOptionPane.WARNING_MESSAGE);
 					}
 					
@@ -230,7 +230,7 @@ public class Edition{
 							JOptionPane.showMessageDialog(null, "Nova senha cadastrada!",
 									"Sucesso!!!", JOptionPane.INFORMATION_MESSAGE);
 					} catch (NotFoundException e) {
-						JOptionPane.showMessageDialog(null, "Erro! \n RefaÁa o login!",
+						JOptionPane.showMessageDialog(null, "Erro! \n Refa√ßa o login!",
 								"Erro ao editar nome", JOptionPane.WARNING_MESSAGE);
 					}
 					
@@ -262,7 +262,7 @@ public class Edition{
 							JOptionPane.showMessageDialog(null, "Novo e-mail cadastrado!",
 									"Sucesso!!!", JOptionPane.INFORMATION_MESSAGE);
 					} catch (NotFoundException e) {
-						JOptionPane.showMessageDialog(null, "Erro! \n RefaÁa o login!",
+						JOptionPane.showMessageDialog(null, "Erro! \n Refa√ßa o login!",
 								"Erro ao editar nome", JOptionPane.WARNING_MESSAGE);
 					}
 					
@@ -279,7 +279,7 @@ public class Edition{
 							JOptionPane.showMessageDialog(null, "Novo curso cadastrado!",
 									"Sucesso!!!", JOptionPane.INFORMATION_MESSAGE);
 					} catch (NotFoundException e) {
-						JOptionPane.showMessageDialog(null, "Erro! \n RefaÁa o login!",
+						JOptionPane.showMessageDialog(null, "Erro! \n Refa√ßa o login!",
 								"Erro ao editar nome", JOptionPane.WARNING_MESSAGE);
 					}
 					
@@ -296,7 +296,7 @@ public class Edition{
 							JOptionPane.showMessageDialog(null, "Novo curso semestre!",
 									"Sucesso!!!", JOptionPane.INFORMATION_MESSAGE);
 					} catch (NotFoundException e) {
-						JOptionPane.showMessageDialog(null, "Erro! \n RefaÁa o login!",
+						JOptionPane.showMessageDialog(null, "Erro! \n Refa√ßa o login!",
 								"Erro ao editar nome", JOptionPane.WARNING_MESSAGE);
 					}
 					
