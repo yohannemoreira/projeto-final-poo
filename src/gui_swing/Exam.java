@@ -18,6 +18,8 @@ import java.awt.GridBagLayout;
 import java.awt.CardLayout;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import java.awt.Font;
@@ -28,14 +30,18 @@ import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import javax.swing.UIManager;
 import java.awt.SystemColor;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class Exam {
+public class Exam implements ActionListener{
 
 	private JFrame frmAvaliao;
 	private JTextField textField;
 	private JTextField txtDescription;
 	private JTextField txtDate;
 	private JTextField txtActivity;
+	private JButton registrationButton;
+	private  static String email;
 
 	/**
 	 * Launch the application.
@@ -44,7 +50,7 @@ public class Exam {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Exam window = new Exam();
+					Exam window = new Exam("cmatheuslf@gmail.com");
 					window.frmAvaliao.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -56,8 +62,12 @@ public class Exam {
 	/**
 	 * Create the application.
 	 */
-	public Exam() {
+	public Exam(String email) {
+		this.email = email;
 		initialize();
+	}
+	public JFrame getFrame() {
+		return frmAvaliao;
 	}
 
 	/**
@@ -73,9 +83,9 @@ public class Exam {
 		frmAvaliao.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-		gridBagLayout.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+		gridBagLayout.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 		gridBagLayout.columnWeights = new double[]{0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-		gridBagLayout.rowWeights = new double[]{0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gridBagLayout.rowWeights = new double[]{0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		frmAvaliao.getContentPane().setLayout(gridBagLayout);
 		GridBagConstraints gbc_lblNewLabel_1 = new GridBagConstraints();
 		gbc_lblNewLabel_1.insets = new Insets(5, 5, 5, 5);
@@ -87,13 +97,32 @@ public class Exam {
 		gbc_lblNewLabel1.gridx = 2;
 		gbc_lblNewLabel1.gridy = 3;
 		
+		JPanel panel_1 = new JPanel();
+		panel_1.setForeground(Color.DARK_GRAY);
+		panel_1.setBackground(Color.DARK_GRAY);
+		GridBagConstraints gbc_panel_1 = new GridBagConstraints();
+		gbc_panel_1.insets = new Insets(150, 0, 5, 5);
+		gbc_panel_1.fill = GridBagConstraints.BOTH;
+		gbc_panel_1.gridx = 5;
+		gbc_panel_1.gridy = 1;
+		frmAvaliao.getContentPane().add(panel_1, gbc_panel_1);
+		
+		JLabel imgLabel = new JLabel("");
+		GridBagConstraints gbc_imgLabel = new GridBagConstraints();
+		gbc_imgLabel.insets = new Insets(50, 50, 5, 5);
+		gbc_imgLabel.gridx = 5;
+		gbc_imgLabel.gridy = 1;
+		panel_1.add(imgLabel, gbc_imgLabel);
+		ImageIcon image = new ImageIcon(Exam.class.getResource("/image/group.png"));
+		imgLabel.setIcon(new ImageIcon(image.getImage().getScaledInstance(130, 120, Image.SCALE_DEFAULT)));
+		
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.DARK_GRAY);
 		GridBagConstraints gbc_panel = new GridBagConstraints();
 		gbc_panel.insets = new Insets(50, 50, 5, 5);
 		gbc_panel.fill = GridBagConstraints.BOTH;
 		gbc_panel.gridx = 1;
-		gbc_panel.gridy = 1;
+		gbc_panel.gridy = 2;
 		GridBagLayout gbl_panel = new GridBagLayout();
 		gbl_panel.columnWidths = new int[]{177, 74, 96, 0};
 		gbl_panel.rowHeights = new int[]{52, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -145,7 +174,7 @@ public class Exam {
 		panel.add(tDate, gbc_tDate);
 		tDate.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		tDate.setForeground(Color.YELLOW);
-				
+		
 		txtDate = new JTextField();
 		GridBagConstraints gbc_txtDate = new GridBagConstraints();
 		gbc_txtDate.fill = GridBagConstraints.HORIZONTAL;
@@ -179,36 +208,27 @@ public class Exam {
 		panel.add(txtDescription, gbc_txtDescription);
 		txtDescription.setColumns(10);
 		
-		JButton registrationButton = new JButton("Cadastrar");
+		registrationButton = new JButton("Cadastrar");
 		registrationButton.setForeground(Color.YELLOW);
 		registrationButton.setBackground(Color.DARK_GRAY);
 		GridBagConstraints gbc_registrationButton = new GridBagConstraints();
 		gbc_registrationButton.gridx = 2;
 		gbc_registrationButton.gridy = 7;
 		panel.add(registrationButton, gbc_registrationButton);
-		
-		
-		
-		
-		
-		JPanel panel_1 = new JPanel();
-		panel_1.setForeground(Color.DARK_GRAY);
-		panel_1.setBackground(Color.DARK_GRAY);
-		GridBagConstraints gbc_panel_1 = new GridBagConstraints();
-		gbc_panel_1.insets = new Insets(150, 0, 5, 5);
-		gbc_panel_1.fill = GridBagConstraints.BOTH;
-		gbc_panel_1.gridx = 5;
-		gbc_panel_1.gridy = 1;
-		frmAvaliao.getContentPane().add(panel_1, gbc_panel_1);
-		
-		JLabel imgLabel = new JLabel("");
-		GridBagConstraints gbc_imgLabel = new GridBagConstraints();
-		gbc_imgLabel.insets = new Insets(50, 50, 5, 5);
-		gbc_imgLabel.gridx = 5;
-		gbc_imgLabel.gridy = 1;
-		panel_1.add(imgLabel, gbc_imgLabel);
-		ImageIcon image = new ImageIcon(Exam.class.getResource("/img/exame.png"));
-		imgLabel.setIcon(new ImageIcon(image.getImage().getScaledInstance(130, 120, Image.SCALE_DEFAULT)));
+		registrationButton.addActionListener((ActionListener) this);
 	}
-
+	//evento de cadastro de avaliação
+	public void actionPerformed(ActionEvent evento) {
+		String activity = txtActivity.getText();
+		String date = txtDate.getText();
+		String  description = txtDescription.getText();
+		int id = FacadeAccount.getInstance().getAccounts().getProfiles().get(email).getExamNumber();
+		
+		FacadeAccount.getInstance().getAccounts().getProfiles().get(email).addExamEvents( activity, date, description, id);
+		
+		int retorno = JOptionPane.showConfirmDialog(frmAvaliao, "Deseja excluir o aluno?", "Mensagem", JOptionPane.YES_NO_OPTION);
+		if (retorno == JOptionPane.YES_OPTION) {
+			frmAvaliao.dispose();			
+		}
+	}
 }
