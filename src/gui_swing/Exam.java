@@ -52,9 +52,7 @@ public class Exam implements ActionListener{
 	private  static String password;
 	private  static String followers;
 
-	/**
-	 * Inicializa a aplicação.
-	 */
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -69,15 +67,7 @@ public class Exam implements ActionListener{
 		});
 	}
 
-	/**
-	* Cria uma avaliação.
-	* @param email Email da conta.
-	* @param name Nome do evento de avaliação.
-	* @param course Curso da conta.
-        * @param semster Semestre em que a conta está.
-	* @param password Senha da conta.
-	* @param followes Seguidores da conta. 
-	*/
+	
 	public Exam(String email, String name, String course, String semester, String password, String followers) {
 		super();
 		this.email = email;
@@ -96,9 +86,7 @@ public class Exam implements ActionListener{
 		return frmAvaliao;
 	}
 
-	/**
-	 * Inicializa os conteúdos da frame.
-	 */
+	
 	private void initialize() {
 		frmAvaliao = new JFrame();
 		frmAvaliao.setAutoRequestFocus(false);
@@ -245,10 +233,7 @@ public class Exam implements ActionListener{
 		
 		frmAvaliao.setVisible(true);
 	}
-     /**
-     * Ação para o evento de cadastro de avaliação.
-     * @param evento Objeto do tipo ActionEvent.
-     */
+     
 	public void actionPerformed(ActionEvent evento) {
 		String activity = txtActivity.getText();
 		String date = txtDate.getText();
