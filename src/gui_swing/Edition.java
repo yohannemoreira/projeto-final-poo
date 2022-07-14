@@ -40,9 +40,7 @@ public class Edition{
 	private  static String password;
 	private  static String followers;
 
-	/**
-	 * Launch the application.
-	 */
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -57,9 +55,7 @@ public class Edition{
 		});
 	}
 
-	/**
-	 * Create the application.
-	 */
+	
 	public Edition(String email, String name, String course, String semester, String password,
 			String followers) {
 		super();
@@ -77,9 +73,7 @@ public class Edition{
 	}
 
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
+	
 	private void initialize() {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(Color.DARK_GRAY);
