@@ -39,8 +39,8 @@ public class AccountCollection implements AccountRegistration {
 
     @Override
     public void removeAccount(Account account) throws NotFoundException  {
-	findAccount(account.getUser());
-	profiles.remove(account.getUser());
+    findAccount(account.getEmail());
+	profiles.remove(account.getEmail());
     }
 
 

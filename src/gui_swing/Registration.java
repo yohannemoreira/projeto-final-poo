@@ -59,6 +59,7 @@ public class Registration {
 			public void run() {
 				try {
 					Registration window = new Registration();
+					window.frame.setLocationRelativeTo(null);
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -284,6 +285,10 @@ public class Registration {
 				|| txtCourse.getText().isEmpty() || txtPassword.getText().isEmpty()
 				|| (cbSemester.getSelectedItem().toString() == "Selecione um semestre")) {
 			JOptionPane.showMessageDialog(null, "Preencha todos os campos", "Erro ao criar conta",
+					JOptionPane.WARNING_MESSAGE);
+		}
+		else if(txtPassword.getText().length() <= 7) {
+			JOptionPane.showMessageDialog(null, "Senha deve conter no minimo 8 caracteres", "Erro ao criar conta",
 					JOptionPane.WARNING_MESSAGE);
 		}
 		else {
