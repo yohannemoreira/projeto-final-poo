@@ -35,7 +35,7 @@ import java.awt.TextArea;
 import javax.swing.JTextPane;
 import java.awt.FlowLayout;
 
-public class Profile {
+public class Profile2 {
 
 	private JFrame frame;
 	private Settings frameReg;
@@ -62,7 +62,7 @@ public class Profile {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Profile window = new Profile(email, name, course, semester, password, followers);
+					Profile2 window = new Profile2(email, name, course, semester, password, followers);
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -75,7 +75,7 @@ public class Profile {
 	 * Create the application.
 	 */
 
-	public Profile(String email, String name, String course, String semester, String password,
+	public Profile2(String email, String name, String course, String semester, String password,
 			String followers) {
 		super();
 		this.email = email;

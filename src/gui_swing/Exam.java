@@ -51,6 +51,7 @@ public class Exam implements ActionListener{
 			public void run() {
 				try {
 					Exam window = new Exam(email, name, course, semester, password, followers);
+					window.frmAvaliao.setLocationRelativeTo(null);
 					window.frmAvaliao.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();

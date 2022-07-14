@@ -39,6 +39,7 @@ public class Edition{
 			public void run() {
 				try {
 					Edition window = new Edition(email, name, course, semester, password, followers);
+					window.frame.setLocationRelativeTo(null);
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
