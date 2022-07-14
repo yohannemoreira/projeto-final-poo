@@ -1,3 +1,12 @@
+/**
+ * Classe ExamList.
+ *
+ * @author Wildnei e Bruna.
+ * @version 1.0
+ * <br>
+ * Copyright (C) 2022 Universidade Federal do
+Cear√°.
+ */
 package gui_swing;
 
 import java.awt.BorderLayout;
@@ -69,7 +78,7 @@ public class ExamList extends javax.swing.JFrame{
 				getContentPane().add(jScrollPane1, BorderLayout.CENTER);
 				{
 					DefaultTableModel tableModel = new DefaultTableModel(null,
-							new String[] { "Atividade", "Data", "DescriÁ„o"});
+							new String[] { "Atividade", "Data", "Descri√ß√£o"});
 					jTable1 = new JTable();
 					jScrollPane1.setViewportView(jTable1);
 					jTable1.setModel(tableModel);
