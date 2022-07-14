@@ -52,7 +52,9 @@ public class Exam implements ActionListener{
 	private  static String password;
 	private  static String followers;
 
-	
+	/**
+	 * Inicializa a aplicação.
+	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -67,7 +69,15 @@ public class Exam implements ActionListener{
 		});
 	}
 
-	
+	/**
+	* Cria uma avaliação.
+	* @param email Email da conta.
+	* @param name Nome do evento de avaliação.
+	* @param course Curso da conta.
+        * @param semster Semestre em que a conta está.
+	* @param password Senha da conta.
+	* @param followes Seguidores da conta. 
+	*/
 	public Exam(String email, String name, String course, String semester, String password, String followers) {
 		super();
 		this.email = email;
@@ -86,7 +96,9 @@ public class Exam implements ActionListener{
 		return frmAvaliao;
 	}
 
-	
+	/**
+	 * Inicializa os conteúdos da frame.
+	 */
 	private void initialize() {
 		frmAvaliao = new JFrame();
 		frmAvaliao.setAutoRequestFocus(false);
@@ -127,7 +139,7 @@ public class Exam implements ActionListener{
 		gbc_imgLabel.gridx = 5;
 		gbc_imgLabel.gridy = 1;
 		panel_1.add(imgLabel, gbc_imgLabel);
-		ImageIcon image = new ImageIcon(Exam.class.getResource("/img/group.png"));
+		ImageIcon image = new ImageIcon(Exam.class.getResource("/img/exame.png"));
 		imgLabel.setIcon(new ImageIcon(image.getImage().getScaledInstance(130, 120, Image.SCALE_DEFAULT)));
 		
 		JPanel panel = new JPanel();
@@ -145,9 +157,9 @@ public class Exam implements ActionListener{
 		panel.setLayout(gbl_panel);
 		
 		
-		JLabel TitleGeneral = new JLabel("AvaliaÃ§Ã£o");
+		JLabel TitleGeneral = new JLabel("Avaliação");
 		TitleGeneral.setForeground(Color.YELLOW);
-		TitleGeneral.setFont(new Font("Tahoma", Font.PLAIN, 43));
+		TitleGeneral.setFont(new Font("Segoe UI", Font.BOLD, 42));
 		GridBagConstraints gbc_TitleGeneral = new GridBagConstraints();
 		gbc_TitleGeneral.anchor = GridBagConstraints.NORTHWEST;
 		gbc_TitleGeneral.insets = new Insets(0, 0, 5, 5);
@@ -166,7 +178,7 @@ public class Exam implements ActionListener{
 		gbc_tActivity.gridx = 0;
 		gbc_tActivity.gridy = 1;
 		panel.add(tActivity, gbc_tActivity);
-		tActivity.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		tActivity.setFont(new Font("Segoe UI", Font.BOLD, 18));
 		tActivity.setForeground(Color.YELLOW);
 		
 		txtActivity = new JTextField();
@@ -200,7 +212,7 @@ public class Exam implements ActionListener{
 		panel.add(txtDate, gbc_txtDate);
 		txtDate.setColumns(10);
 		
-		JLabel tDescription = new JLabel("DescriÃ§Ã£o	");
+		JLabel tDescription = new JLabel("Descrição");
 		GridBagConstraints gbc_tDescription = new GridBagConstraints();
 		gbc_tDescription.anchor = GridBagConstraints.WEST;
 		gbc_tDescription.insets = new Insets(0, 0, 5, 5);
@@ -233,7 +245,10 @@ public class Exam implements ActionListener{
 		
 		frmAvaliao.setVisible(true);
 	}
-     
+     /**
+     * Ação para o evento de cadastro de avaliação.
+     * @param evento Objeto do tipo ActionEvent.
+     */
 	public void actionPerformed(ActionEvent evento) {
 		String activity = txtActivity.getText();
 		String date = txtDate.getText();
