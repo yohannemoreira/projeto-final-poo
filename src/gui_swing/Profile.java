@@ -369,6 +369,8 @@ public class Profile {
 				 JLabel post1 = new JLabel(posts.get(sizeAux).getSubtitle());
 				 panel_1.removeAll();
 				 panel_1.add(post1);
+				 panel_1.setVisible(false);
+				 panel_1.setVisible(true);
 				 }
 				 
 				 sizeAux--;
@@ -376,24 +378,32 @@ public class Profile {
 				 JLabel post2 = new JLabel(posts.get(sizeAux).getSubtitle());
 				 panel_2.removeAll();
 				 panel_2.add(post2);
+				 panel_2.setVisible(false);
+				 panel_2.setVisible(true);
 				 }	 
 				 sizeAux--;
 				 if(sizeAux >= 0) {
 				 JLabel post3 = new JLabel(posts.get(sizeAux).getSubtitle());
 				 panel_3.removeAll();
 				 panel_3.add(post3);
+				 panel_3.setVisible(false);
+				 panel_3.setVisible(true);
 				 }
 				 sizeAux--;
 				 if(sizeAux >= 0) {
 				 JLabel post4 = new JLabel(posts.get(sizeAux).getSubtitle());
 				 panel_4.removeAll();
 				 panel_4.add(post4);
+				 panel_4.setVisible(false);
+				 panel_4.setVisible(true);
 				 }
 				 sizeAux--;
 				 if(sizeAux >= 0) {
 				 JLabel post5 = new JLabel(posts.get(sizeAux).getSubtitle());
 				 panel_5.removeAll();
 				 panel_5.add(post5);
+				 panel_5.setVisible(false);
+				 panel_5.setVisible(true);
 				 }
 				}
 		} catch (NotFoundException e) {
