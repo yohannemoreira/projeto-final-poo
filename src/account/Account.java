@@ -1,7 +1,11 @@
 /**
- * @author Yohanne Moreira
- * version 1.0
- * since 05-06-2022
+ * Classe Account.
+ *
+ * @author Bruna, Gabriela e Yohanne
+ * @version 3.0
+ * <br>
+ * Copyright (C) 2022 Universidade Federal do
+Ceará.
  */
 package account;
 
