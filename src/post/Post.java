@@ -1,30 +1,41 @@
+/**
+ * Classe Post.
+ *
+ * @author Bruna e Carlos Matheus
+ * @version 2.0
+ * <br>
+ * Copyright (C) 2022 Universidade Federal do
+Ceará.
+ */
 package post;
 
 import java.util.List;
 
 public class Post {
+// atributos
 	private String subtitle;
 	private int id;
 	private int likeNumber;
 	private int commentNumber;
 	private String localization;
 	private List<Comment> comments;
-
+/**
+* Cria um Post.
+* @param subtitle Legenda do Post.
+*/
 	public Post(String subtitle) {
 		this.subtitle = subtitle;
 		this.id = this.hashCode();
 	}
-	
-	//metodos de acesso controlado
-	   
-	/**
+
+/**
 * Recupera a legenda do post.
 * @return A legenda do post.
 */
-	//legenda
 	public String getSubtitle() {
 		return this.subtitle;
 	}
+
 	public void setSubtitle(String subtitle) {
 		this.subtitle = subtitle;
 	}
@@ -32,21 +43,24 @@ public class Post {
 * Recupera a identificação do post.
 * @return A identificação do post.
 */
-	//id
 	public int getId() {
 		return this.id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	//localizacao
+	
+/**
+* Recupera a localização do post.
+* @return A localização do post.
+*/
 	public String getlocalization() {
 		return this.localization;
 	}
 	public void setLocalization(String localization) {
 		this.localization = localization;
 	}
-	    /**
+/**
 * Recupera o número de curtidas do post.
 * @return O número de curtidas do post.
 */
@@ -57,9 +71,9 @@ public class Post {
 	public void setLikeNumber(int likeNumber) {
 		this.likeNumber = likeNumber;
 	}
-	    /**
+/**
 * Recupera o número de comentários do post.
-* @return O número de comentário do post.
+* @return O número do comentário do post.
 */
 	//comentario
 	public int getCommentNumber() {
@@ -68,21 +82,29 @@ public class Post {
 	public void setCommentNumber(int commentNumber) {
 		this.commentNumber = commentNumber;
 	}
-	    /**
-* Recupera uma lista de comentário.
-* @return Uma lista de comentário.
+/**
+* Recupera a lista de comentário.
+* @return a lista de comentário.
 */
 	//Comments
 	public List<Comment> getComments(){
 		return comments;
 	}
-
-	//Add Comment
+/**
+* Adiciona um comentário.
+* @param id Identificação do comentário.
+* @param author Autor do comentário.
+* @param text Texto do comentário.
+* @param date Data do comentário.
+*/
 	public void addComment(int id, String author, String text, String date){
 			comments.add(new Comment(id, author, text, date));
 	}
 
-	//Remove Comment
+/**
+* Remove um comentário.
+* @param id Identificação do comentário.
+*/	
 	public void removeComment(int id){
 		for (int i = 0; i < comments.size(); i++) {
 			if (comments.get(i).getId() == id){
@@ -91,7 +113,9 @@ public class Post {
 		}
 		}
 
-		//Show Comments
+/**
+* Mostra comentários.
+*/
 		public void showComments(){
 			for (int i = 0; i < comments.size(); i++) {
 				System.out.println(" Comment " + this.getComments().get(i).getId() + " by " + comments.get(i).getAuthor() + " on " + comments.get(i).getDate());
