@@ -54,6 +54,7 @@ public class Profile {
 	private JPanel panel_5;
 	private JLabel post1;
 	private ShowPosts showPost;
+	private Exam exams;
 	/**
 	 * Launch the application.
 	 */
@@ -203,6 +204,11 @@ public class Profile {
 		model.addElement("Teste");
 		
 		JButton btnExam = new JButton("CADASTRAR ATIVIDADES");
+		btnExam.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				exams = new Exam(email, name, course, semester, password, followers);
+			}
+		});
 		btnExam.setForeground(new Color(255, 215, 0));
 		btnExam.setBackground(new Color(29, 29, 29));
 		GridBagConstraints gbc_btnExam = new GridBagConstraints();
@@ -221,19 +227,12 @@ public class Profile {
 		panel.add(panel_1, gbc_panel_1);
 		panel_1.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
-		JButton btnShowPost = new JButton("Ver Atividades");
-		btnShowPost.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(e.getSource() == btnShowPost) {
-					showPost = new ShowPosts(email, name, course, semester, password, followers);
-				}
-			}
-		});
-		GridBagConstraints gbc_btnShowPost = new GridBagConstraints();
-		gbc_btnShowPost.insets = new Insets(0, 0, 5, 0);
-		gbc_btnShowPost.gridx = 2;
-		gbc_btnShowPost.gridy = 6;
-		panel.add(btnShowPost, gbc_btnShowPost);
+		JButton btnExams = new JButton("Ver Atividades");
+		GridBagConstraints gbc_btnExams = new GridBagConstraints();
+		gbc_btnExams.insets = new Insets(0, 0, 5, 0);
+		gbc_btnExams.gridx = 2;
+		gbc_btnExams.gridy = 6;
+		panel.add(btnExams, gbc_btnExams);
 		
 		panel_2 = new JPanel();
 		GridBagConstraints gbc_panel_2 = new GridBagConstraints();
@@ -253,9 +252,6 @@ public class Profile {
 		panel.add(panel_3, gbc_panel_3);
 		panel_3.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
-		JLabel lblNewLabel_2 = new JLabel("New label");
-		panel_3.add(lblNewLabel_2);
-		
 		panel_4 = new JPanel();
 		GridBagConstraints gbc_panel_4 = new GridBagConstraints();
 		gbc_panel_4.insets = new Insets(0, 0, 5, 5);
@@ -264,9 +260,6 @@ public class Profile {
 		gbc_panel_4.gridy = 9;
 		panel.add(panel_4, gbc_panel_4);
 		panel_4.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
-		
-		JLabel lblNewLabel_3 = new JLabel("New label");
-		panel_4.add(lblNewLabel_3);
 		
 		panel_5 = new JPanel();
 		GridBagConstraints gbc_panel_5 = new GridBagConstraints();
@@ -277,8 +270,17 @@ public class Profile {
 		panel.add(panel_5, gbc_panel_5);
 		panel_5.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
-		JLabel lblNewLabel_4 = new JLabel("New label");
-		panel_5.add(lblNewLabel_4);
+		JButton btnShowPost = new JButton("Ver mais publicações");
+		btnShowPost.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		GridBagConstraints gbc_btnShowPost = new GridBagConstraints();
+		gbc_btnShowPost.insets = new Insets(0, 0, 5, 0);
+		gbc_btnShowPost.gridx = 2;
+		gbc_btnShowPost.gridy = 10;
+		panel.add(btnShowPost, gbc_btnShowPost);
 		
 		textArea = new JTextArea();
 		GridBagConstraints gbc_textArea = new GridBagConstraints();
@@ -337,11 +339,41 @@ public class Profile {
 		try {
 			posts = FacadeAccount.getInstance().findAccount(email).getPosts().getPostCollection();
 			int sizeAux = posts.size();
-			JLabel post1 = new JLabel(posts.get(0).getSubtitle());			
-			panel_1.add(post1);
-			// if (posts.size() <=  5 ) {
-				// panel_1.add();
-			// }
+			// JLabel post1 = new JLabel(posts.get(0).getSubtitle());			
+			// panel_1.add(post1);
+				if(sizeAux > 0) {
+				 sizeAux--;
+				 if(sizeAux >= 0 ) {
+				 JLabel post1 = new JLabel(posts.get(sizeAux).getSubtitle());
+				 panel_1.removeAll();
+				 panel_1.add(post1);
+				 }
+				 
+				 sizeAux--;
+				 if(sizeAux >= 0) {
+				 JLabel post2 = new JLabel(posts.get(sizeAux).getSubtitle());
+				 panel_2.removeAll();
+				 panel_2.add(post2);
+				 }	 
+				 sizeAux--;
+				 if(sizeAux >= 0) {
+				 JLabel post3 = new JLabel(posts.get(sizeAux).getSubtitle());
+				 panel_3.removeAll();
+				 panel_3.add(post3);
+				 }
+				 sizeAux--;
+				 if(sizeAux >= 0) {
+				 JLabel post4 = new JLabel(posts.get(sizeAux).getSubtitle());
+				 panel_4.removeAll();
+				 panel_4.add(post4);
+				 }
+				 sizeAux--;
+				 if(sizeAux >= 0) {
+				 JLabel post5 = new JLabel(posts.get(sizeAux).getSubtitle());
+				 panel_5.removeAll();
+				 panel_5.add(post5);
+				 }
+				}
 		} catch (NotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
