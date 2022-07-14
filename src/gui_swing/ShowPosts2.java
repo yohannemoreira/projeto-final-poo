@@ -58,6 +58,8 @@ public class ShowPosts2 extends javax.swing.JFrame{
 
   public ShowPosts2(String email) {
     super();
+    setBackground(Color.DARK_GRAY);
+    getContentPane().setBackground(Color.DARK_GRAY);
     ShowPosts2.email = email;
     initGUI();
     int larguraJanela = getWidth();
@@ -77,7 +79,9 @@ public class ShowPosts2 extends javax.swing.JFrame{
       setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
       {
         jScrollPane1 = new JScrollPane();
-        btnBack = new JButton("Voltar");
+        btnBack = new JButton("Voltar");        
+        btnBack.setForeground(Color.YELLOW);
+        btnBack.setBackground(Color.DARK_GRAY);
         btnBack.addActionListener(new ActionListener() {
           @Override
           public void actionPerformed(ActionEvent e) {
@@ -87,6 +91,7 @@ public class ShowPosts2 extends javax.swing.JFrame{
         });
         setSize(600, 600);
         JPanel p = new JPanel();
+        p.setBackground(Color.DARK_GRAY);
         p.setLayout(new FlowLayout());
         p.add(btnBack);
         getContentPane().add(p, BorderLayout.SOUTH);
@@ -95,6 +100,7 @@ public class ShowPosts2 extends javax.swing.JFrame{
           DefaultTableModel tableModel = new DefaultTableModel(null,
               new String[] { "id", "Post"});
           jTable1 = new JTable();
+          jTable1.setBackground(Color.DARK_GRAY);
           jScrollPane1.setViewportView(jTable1);
           jTable1.setModel(tableModel);
           changeTable();
