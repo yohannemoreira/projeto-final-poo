@@ -286,6 +286,10 @@ public class Registration {
 			JOptionPane.showMessageDialog(null, "Preencha todos os campos", "Erro ao criar conta",
 					JOptionPane.WARNING_MESSAGE);
 		}
+		else if(txtPassword.getText().length() <= 7) {
+			JOptionPane.showMessageDialog(null, "Senha deve conter no minimo 8 caracteres", "Erro ao criar conta",
+					JOptionPane.WARNING_MESSAGE);
+		}
 		else {
 			try {
 				FacadeAccount.getInstance().addAccount(new Account(name, user, password, email, course, semester));
