@@ -1,7 +1,12 @@
 /**
-* @author Yohanne;
-*
-*/
+ * Classe Login2.
+ *
+ * @author Yohanne.
+ * @version 2.0
+ * <br>
+ * Copyright (C) 2022 Universidade Federal do
+Ceará.
+ */
 package gui_swing;
 
 import java.awt.EventQueue;
