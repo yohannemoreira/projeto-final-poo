@@ -260,12 +260,7 @@ public class Profile {
 		gbc_btnExams.gridx = 2;
 		gbc_btnExams.gridy = 6;
 		panel.add(btnExams, gbc_btnExams);
-		btnShowPost.addActionListener(new ActionListener() {
-  			 public void actionPerformed(ActionEvent e) {
-	    			ShowPosts2 showPosts = new ShowPosts2(email);
-    				showPosts.setVisible(true);
-   			 }
-  		});
+		
 		
 		panel_2 = new JPanel();
 		GridBagConstraints gbc_panel_2 = new GridBagConstraints();
@@ -307,10 +302,11 @@ public class Profile {
 		btnShowPost.setForeground(new Color(255, 215, 0));
 		btnShowPost.setBackground(new Color(29, 29, 29));
 		btnShowPost.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-			}
-		});
+  			 public void actionPerformed(ActionEvent e) {
+	    			ShowPosts2 showPosts = new ShowPosts2(email);
+    				showPosts.setVisible(true);
+   			 }
+  		});
 		GridBagConstraints gbc_btnShowPost = new GridBagConstraints();
 		gbc_btnShowPost.insets = new Insets(0, 0, 5, 0);
 		gbc_btnShowPost.gridx = 2;
