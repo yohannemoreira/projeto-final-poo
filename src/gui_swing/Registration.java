@@ -59,6 +59,7 @@ public class Registration {
 			public void run() {
 				try {
 					Registration window = new Registration();
+					window.frame.setLocationRelativeTo(null);
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
