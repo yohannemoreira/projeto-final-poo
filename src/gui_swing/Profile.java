@@ -253,6 +253,12 @@ public class Profile {
 		panel_1.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
 		JButton btnExams = new JButton("Ver Atividades");
+		btnExams.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ExamList examList = new ExamList(email);
+				examList.setVisible(true);
+			}
+		});
 		btnExams.setForeground(new Color(255, 215, 0));
 		btnExams.setBackground(new Color(29, 29, 29));
 		GridBagConstraints gbc_btnExams = new GridBagConstraints();
