@@ -3,7 +3,11 @@ package post;
 import java.util.ArrayList;
 
 public class PostCollection implements IPostCollection{
-	private ArrayList<Post> postCollection;
+	
+	
+	private ArrayList<Post> postCollection = new ArrayList();
+	
+
 	public void addPost(Post post) {
 		postCollection.add(post);
 	}
@@ -14,6 +18,7 @@ public class PostCollection implements IPostCollection{
 	public ArrayList<Post> getPostCollection(){
 		return postCollection;
 	}
+	
 	public void removePost(int id) {
 		int indice = -1;
 		if(postCollection.size()>0) {

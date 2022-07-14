@@ -26,8 +26,11 @@ import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import java.awt.SystemColor;
+import java.awt.TextArea;
+import javax.swing.JTextPane;
 
 public class Profile {
 
@@ -40,6 +43,8 @@ public class Profile {
 	private  static String semester;
 	private  static String password;
 	private  static String followers;
+	private JTextArea textArea;
+
 	/**
 	 * Launch the application.
 	 */
@@ -85,9 +90,9 @@ public class Profile {
 		frame.getContentPane().add(panel, BorderLayout.CENTER);
 		GridBagLayout gbl_panel = new GridBagLayout();
 		gbl_panel.columnWidths = new int[]{40, 415, 55, 0};
-		gbl_panel.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 295, 61, 0};
+		gbl_panel.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 50, 49, 50, 50, 50, 61, 0};
 		gbl_panel.columnWeights = new double[]{0.0, 1.0, 0.0, Double.MIN_VALUE};
-		gbl_panel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, Double.MIN_VALUE};
+		gbl_panel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, Double.MIN_VALUE};
 		panel.setLayout(gbl_panel);
 		
 		JButton btnSearch = new JButton("PESQUISAR");
@@ -185,9 +190,6 @@ public class Profile {
 		gbc_lblPosts.gridx = 1;
 		gbc_lblPosts.gridy = 5;
 		panel.add(lblPosts, gbc_lblPosts);
-	
-		JList list = new JList();
-		list.setBackground(new Color(29,29,29));
 		DefaultListModel model = new DefaultListModel();
 		model.addElement("Teste");
 		
@@ -200,33 +202,67 @@ public class Profile {
 		gbc_btnExam.gridx = 2;
 		gbc_btnExam.gridy = 5;
 		panel.add(btnExam, gbc_btnExam);
-		list.setModel(model);
-		GridBagConstraints gbc_list = new GridBagConstraints();
-		gbc_list.insets = new Insets(0, 0, 5, 5);
-		gbc_list.fill = GridBagConstraints.BOTH;
-		gbc_list.gridx = 1;
-		gbc_list.gridy = 6;
-		panel.add(list, gbc_list);
 		
-		JTextArea textArea = new JTextArea();
+		JPanel panel_1 = new JPanel();
+		GridBagConstraints gbc_panel_1 = new GridBagConstraints();
+		gbc_panel_1.insets = new Insets(0, 0, 5, 5);
+		gbc_panel_1.fill = GridBagConstraints.BOTH;
+		gbc_panel_1.gridx = 1;
+		gbc_panel_1.gridy = 6;
+		panel.add(panel_1, gbc_panel_1);
+		
+		JPanel panel_2 = new JPanel();
+		GridBagConstraints gbc_panel_2 = new GridBagConstraints();
+		gbc_panel_2.insets = new Insets(0, 0, 5, 5);
+		gbc_panel_2.fill = GridBagConstraints.BOTH;
+		gbc_panel_2.gridx = 1;
+		gbc_panel_2.gridy = 7;
+		panel.add(panel_2, gbc_panel_2);
+		
+		JPanel panel_3 = new JPanel();
+		GridBagConstraints gbc_panel_3 = new GridBagConstraints();
+		gbc_panel_3.insets = new Insets(0, 0, 5, 5);
+		gbc_panel_3.fill = GridBagConstraints.BOTH;
+		gbc_panel_3.gridx = 1;
+		gbc_panel_3.gridy = 8;
+		panel.add(panel_3, gbc_panel_3);
+		
+		JPanel panel_4 = new JPanel();
+		GridBagConstraints gbc_panel_4 = new GridBagConstraints();
+		gbc_panel_4.insets = new Insets(0, 0, 5, 5);
+		gbc_panel_4.fill = GridBagConstraints.BOTH;
+		gbc_panel_4.gridx = 1;
+		gbc_panel_4.gridy = 9;
+		panel.add(panel_4, gbc_panel_4);
+		
+		JPanel panel_5 = new JPanel();
+		GridBagConstraints gbc_panel_5 = new GridBagConstraints();
+		gbc_panel_5.insets = new Insets(0, 0, 5, 5);
+		gbc_panel_5.fill = GridBagConstraints.BOTH;
+		gbc_panel_5.gridx = 1;
+		gbc_panel_5.gridy = 10;
+		panel.add(panel_5, gbc_panel_5);
+		
+		textArea = new JTextArea();
 		GridBagConstraints gbc_textArea = new GridBagConstraints();
 		gbc_textArea.insets = new Insets(0, 0, 0, 5);
 		gbc_textArea.fill = GridBagConstraints.BOTH;
 		gbc_textArea.gridx = 1;
-		gbc_textArea.gridy = 7;
+		gbc_textArea.gridy = 11;
 		panel.add(textArea, gbc_textArea);
 		
 		JButton btnPost = new JButton("POSTAR");
 		btnPost.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			String texto = null;
-				try {
-					textArea.getText();
-					addPostAction(texto, email);
-				} catch (NullPointerException e1) {
-					JOptionPane.showMessageDialog(null, "Não há nada escrito!",
-							"Erro ao fazer publicação", JOptionPane.WARNING_MESSAGE);
+			String texto = textArea.getText();
+			if ( texto.isEmpty()) {
+				JOptionPane.showMessageDialog(null, "Escreva algo para publicar!",
+						"Erro ao criar conta", JOptionPane.WARNING_MESSAGE);
 				}
+			else {
+				addPostAction(texto, email);
+				
+			}
 			}
 		});
 		btnPost.setForeground(new Color(255, 215, 0));
@@ -234,7 +270,7 @@ public class Profile {
 		GridBagConstraints gbc_btnPost = new GridBagConstraints();
 		gbc_btnPost.fill = GridBagConstraints.HORIZONTAL;
 		gbc_btnPost.gridx = 2;
-		gbc_btnPost.gridy = 7;
+		gbc_btnPost.gridy = 11;
 		panel.add(btnPost, gbc_btnPost);
 		
 		JMenuBar menuBar = new JMenuBar();
@@ -249,12 +285,28 @@ public class Profile {
 	
 	protected void addPostAction(String txt, String email) {
 		try {
-			FacadeAccount.getInstance().findAccount(email).getPosts().getPostCollection().add( new Post(txt));
+			FacadeAccount.getInstance().findAccount(email).getPosts().getPostCollection().add(new Post(txt));
+			System.out.println(FacadeAccount.getInstance().findAccount(email).getPosts().getPostCollection().get(0));
+			textArea.setText("");
+		} catch (NotFoundException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	protected void showPosts() {
+		ArrayList posts;
+		try {
+			posts = FacadeAccount.getInstance().findAccount(email).getPosts().getPostCollection();
+			if (posts.size() != 0) {
+				if(posts.size() <= 5) {
+					
+				}
+			}
 		} catch (NotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 	}
 
 }
