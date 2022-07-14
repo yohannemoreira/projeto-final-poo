@@ -1,7 +1,7 @@
 /**
  * Classe Inteface Gráfica Exam.
  *
- * @author Carlos Matheus, Bruna e Gabriela.
+ * @author Carlos Matheus.
  * @version 2.0
  * <br>
  * Copyright (C) 2022 Universidade Federal do
