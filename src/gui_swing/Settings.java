@@ -1,7 +1,7 @@
 /**
  * Classe Settings.
  *
- * @author Yohanne e Gabriela.
+ * @author Carlos Matheus e Gabriela.
  * @version 2.0
  * <br>
  * Copyright (C) 2022 Universidade Federal do
