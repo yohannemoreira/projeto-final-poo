@@ -62,7 +62,7 @@ public class Profile {
 	private JPanel panel_4;
 	private JPanel panel_5;
 	private JLabel post1;
-	private ShowPosts showPost;
+	private ShowPosts2 showPost;
 	private Exam exams;
 	/**
 	 * Launch the application.
@@ -114,30 +114,7 @@ public class Profile {
 		gbl_panel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, Double.MIN_VALUE};
 		panel.setLayout(gbl_panel);
 		
-		JButton btnSearch = new JButton("PESQUISAR");
-		btnSearch.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				frame.setVisible(false);
-				String searchUser = JOptionPane.showInputDialog("Digite o user:");
-				try {
-					FacadeAccount.getInstance().getAccounts().searchUser(searchUser);
-					JOptionPane.showMessageDialog(null, "User não cadastrado! \n Tente utilizar outro!",
-							"Erro ao criar conta", JOptionPane.WARNING_MESSAGE);
-				}
-				catch(ExistingUserException erro) {
-					//Falta completar
-					//Passar para a yohEscrava
-				}
-				
-			}
-		});
-		btnSearch.setForeground(new Color(255, 215, 0));
-		btnSearch.setBackground(new Color(29, 29, 29));
-		GridBagConstraints gbc_btnSearch = new GridBagConstraints();
-		gbc_btnSearch.insets = new Insets(0, 0, 5, 0);
-		gbc_btnSearch.gridx = 2;
-		gbc_btnSearch.gridy = 0;
-		panel.add(btnSearch, gbc_btnSearch);
+		
 		
 		JLabel lblUser = new JLabel(name);
 		lblUser.setFont(new Font("Segoe UI", Font.BOLD, 40));
@@ -147,15 +124,6 @@ public class Profile {
 		gbc_lblUser.gridx = 1;
 		gbc_lblUser.gridy = 1;
 		panel.add(lblUser, gbc_lblUser);
-		
-		JLabel lblFollowers = new JLabel(followers + " seguidores");
-		lblFollowers.setForeground(new Color(255,215,0));
-		lblFollowers.setFont(new Font("Segoe UI", Font.BOLD, 12));
-		GridBagConstraints gbc_lblFollowers = new GridBagConstraints();
-		gbc_lblFollowers.insets = new Insets(0, 0, 5, 0);
-		gbc_lblFollowers.gridx = 2;
-		gbc_lblFollowers.gridy = 1;
-		panel.add(lblFollowers, gbc_lblFollowers);
 		
 		JSeparator separator = new JSeparator();
 		GridBagConstraints gbc_separator = new GridBagConstraints();
@@ -419,5 +387,6 @@ public class Profile {
 			e.printStackTrace();
 		}
 	}
+	
 
 }
