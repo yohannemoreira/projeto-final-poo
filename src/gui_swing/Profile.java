@@ -8,6 +8,8 @@ import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import java.awt.GridBagLayout;
 import java.awt.Color;
+import java.awt.Component;
+
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
@@ -31,6 +33,7 @@ import java.awt.event.ActionEvent;
 import java.awt.SystemColor;
 import java.awt.TextArea;
 import javax.swing.JTextPane;
+import java.awt.FlowLayout;
 
 public class Profile {
 
@@ -44,7 +47,13 @@ public class Profile {
 	private  static String password;
 	private  static String followers;
 	private JTextArea textArea;
-
+	private JPanel panel_1;
+	private JPanel panel_2;
+	private JPanel panel_3;
+	private JPanel panel_4;
+	private JPanel panel_5;
+	private JLabel post1;
+	private ShowPosts showPost;
 	/**
 	 * Launch the application.
 	 */
@@ -203,45 +212,73 @@ public class Profile {
 		gbc_btnExam.gridy = 5;
 		panel.add(btnExam, gbc_btnExam);
 		
-		JPanel panel_1 = new JPanel();
+		panel_1 = new JPanel();
 		GridBagConstraints gbc_panel_1 = new GridBagConstraints();
 		gbc_panel_1.insets = new Insets(0, 0, 5, 5);
 		gbc_panel_1.fill = GridBagConstraints.BOTH;
 		gbc_panel_1.gridx = 1;
 		gbc_panel_1.gridy = 6;
 		panel.add(panel_1, gbc_panel_1);
+		panel_1.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
-		JPanel panel_2 = new JPanel();
+		JButton btnShowPost = new JButton("Ver Atividades");
+		btnShowPost.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(e.getSource() == btnShowPost) {
+					showPost = new ShowPosts(email, name, course, semester, password, followers);
+				}
+			}
+		});
+		GridBagConstraints gbc_btnShowPost = new GridBagConstraints();
+		gbc_btnShowPost.insets = new Insets(0, 0, 5, 0);
+		gbc_btnShowPost.gridx = 2;
+		gbc_btnShowPost.gridy = 6;
+		panel.add(btnShowPost, gbc_btnShowPost);
+		
+		panel_2 = new JPanel();
 		GridBagConstraints gbc_panel_2 = new GridBagConstraints();
 		gbc_panel_2.insets = new Insets(0, 0, 5, 5);
 		gbc_panel_2.fill = GridBagConstraints.BOTH;
 		gbc_panel_2.gridx = 1;
 		gbc_panel_2.gridy = 7;
 		panel.add(panel_2, gbc_panel_2);
+		panel_2.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
-		JPanel panel_3 = new JPanel();
+		panel_3 = new JPanel();
 		GridBagConstraints gbc_panel_3 = new GridBagConstraints();
 		gbc_panel_3.insets = new Insets(0, 0, 5, 5);
 		gbc_panel_3.fill = GridBagConstraints.BOTH;
 		gbc_panel_3.gridx = 1;
 		gbc_panel_3.gridy = 8;
 		panel.add(panel_3, gbc_panel_3);
+		panel_3.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
-		JPanel panel_4 = new JPanel();
+		JLabel lblNewLabel_2 = new JLabel("New label");
+		panel_3.add(lblNewLabel_2);
+		
+		panel_4 = new JPanel();
 		GridBagConstraints gbc_panel_4 = new GridBagConstraints();
 		gbc_panel_4.insets = new Insets(0, 0, 5, 5);
 		gbc_panel_4.fill = GridBagConstraints.BOTH;
 		gbc_panel_4.gridx = 1;
 		gbc_panel_4.gridy = 9;
 		panel.add(panel_4, gbc_panel_4);
+		panel_4.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
-		JPanel panel_5 = new JPanel();
+		JLabel lblNewLabel_3 = new JLabel("New label");
+		panel_4.add(lblNewLabel_3);
+		
+		panel_5 = new JPanel();
 		GridBagConstraints gbc_panel_5 = new GridBagConstraints();
 		gbc_panel_5.insets = new Insets(0, 0, 5, 5);
 		gbc_panel_5.fill = GridBagConstraints.BOTH;
 		gbc_panel_5.gridx = 1;
 		gbc_panel_5.gridy = 10;
 		panel.add(panel_5, gbc_panel_5);
+		panel_5.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		
+		JLabel lblNewLabel_4 = new JLabel("New label");
+		panel_5.add(lblNewLabel_4);
 		
 		textArea = new JTextArea();
 		GridBagConstraints gbc_textArea = new GridBagConstraints();
@@ -261,7 +298,7 @@ public class Profile {
 				}
 			else {
 				addPostAction(texto, email);
-				
+				showPosts();
 			}
 			}
 		});
@@ -295,14 +332,16 @@ public class Profile {
 	}
 	
 	protected void showPosts() {
-		ArrayList posts;
+		ArrayList <Post> posts;
+		
 		try {
 			posts = FacadeAccount.getInstance().findAccount(email).getPosts().getPostCollection();
-			if (posts.size() != 0) {
-				if(posts.size() <= 5) {
-					
-				}
-			}
+			int sizeAux = posts.size();
+			JLabel post1 = new JLabel(posts.get(0).getSubtitle());			
+			panel_1.add(post1);
+			// if (posts.size() <=  5 ) {
+				// panel_1.add();
+			// }
 		} catch (NotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
