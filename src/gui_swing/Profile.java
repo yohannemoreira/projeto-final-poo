@@ -106,6 +106,22 @@ public class Profile {
 		panel.setLayout(gbl_panel);
 		
 		JButton btnSearch = new JButton("PESQUISAR");
+		btnSearch.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+				String searchUser = JOptionPane.showInputDialog("Digite o user:");
+				try {
+					FacadeAccount.getInstance().getAccounts().searchUser(searchUser);
+					JOptionPane.showMessageDialog(null, "User não cadastrado! \n Tente utilizar outro!",
+							"Erro ao criar conta", JOptionPane.WARNING_MESSAGE);
+				}
+				catch(ExistingUserException erro) {
+					//Falta completar
+					//Passar para a yohEscrava
+				}
+				
+			}
+		});
 		btnSearch.setForeground(new Color(255, 215, 0));
 		btnSearch.setBackground(new Color(29, 29, 29));
 		GridBagConstraints gbc_btnSearch = new GridBagConstraints();
